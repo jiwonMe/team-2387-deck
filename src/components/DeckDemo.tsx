@@ -135,6 +135,25 @@ function Trace() {
         ))}
       </div>
 
+      <div className="mt-3 rounded-[6px] border border-line2 bg-bg p-3">
+        <div className="mb-2 font-mono text-[9px] uppercase tracking-[0.12em] text-fg3">
+          Match sample — 원문 → 조건 추가 → 생성
+        </div>
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+          <div>
+            <div className="text-[11px] text-fg2">올림포스 p.42 #14</div>
+            <div className="font-mono text-[10px] text-fg3">x³−6x²+11x−6 = 0</div>
+          </div>
+          <span className="rounded border border-accent/40 bg-accent/10 px-1.5 py-[2px] font-mono text-[9px] text-accent">
+            + k&gt;0
+          </span>
+          <div>
+            <div className="text-[11px] text-fg2">생성 #03 · 조건추가</div>
+            <div className="font-mono text-[10px] text-fg3">서술형 2문항으로 확장</div>
+          </div>
+        </div>
+      </div>
+
       <Foot>
         이 학교는 <b className="font-semibold text-fg">숫자변형 41% + 조건추가 23%</b>. 즉 올림포스 고난도 문항을
         숫자만 바꾸거나 실수 조건을 더해 냅니다. — 올해 범위에 같은 레시피를 적용합니다.
