@@ -1,0 +1,19 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  align?: 'center' | 'start';
+}
+
+const { id, title, align = 'center' } = Astro.props;
+---
+
+<section
+  class:list={['slide', align === 'start' && 'items-start']}
+  id={id}
+  data-title={title}
+>
+  <div class="inner">
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,190 @@
+---
+import '../styles/global.css';
+import AnatomyFigure from '../components/AnatomyFigure.astro';
+
+interface Props {
+  title: string;
+  total: number;
+  team?: string;
+  date?: string;
+}
+
+const { title, total, team = 'TEAM 2387', date = '2026.11.20' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ko" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content="남들과 같은 문제집은 그만, 우리 학교에 나올 문제를 풀자. 부교재·기출·학평을 비교해 내신 문항을 생성하는 고1·고2 수학 대비 플랫폼" />
+    <meta name="theme-color" content="#0b0b0a" />
+
+    <!-- 테마 선적용: 새로고침 시 깜빡임(FOUC) 방지 -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+
+  <body>
+    <AnatomyFigure />
+
+    <main id="deck">
+      <slot />
+    </main>
+
+    <div class="overview" id="overview" hidden>
+      <div class="inner">
+        <div class="kicker">Index</div>
+        <h2 class="h2" style="margin-bottom:22px">목차</h2>
+        <div class="toc" id="toc"></div>
+        <p class="hint" style="margin-top:26px">Esc 또는 O 로 닫기 · {date}</p>
+      </div>
+    </div>
+
+    <script>
+      const slides = Array.from(document.querySelectorAll<HTMLElement>('.slide'));
+      let idx = 0;
+
+      function paint() {}
+
+      function go(n: number, smooth = true) {
+        n = Math.max(0, Math.min(slides.length - 1, n));
+        slides[n].scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+        idx = n;
+        paint();
+        try {
+          history.replaceState(null, '', '#s' + (n + 1));
+        } catch {}
+      }
+
+      // 현재 슬라이드 추적 (긴 스크롤 구간도 정확히)
+      function activeIndex() {
+        const probe = window.scrollY + window.innerHeight * 0.4;
+        let n = 0;
+        slides.forEach((s, i) => {
+          const top = s.getBoundingClientRect().top + window.scrollY;
+          if (top <= probe) n = i;
+        });
+        return n;
+      }
+
+      let ticking = false;
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(() => {
+            idx = activeIndex();
+            paint();
+            ticking = false;
+          });
+        },
+        { passive: true }
+      );
+
+      // ── 스크롤 구간: 화살표를 단계 이동으로 ────────────────
+      const scrolly = document.querySelector<HTMLElement>('.slide.scrolly');
+
+      function scrollyTotal() {
+        return scrolly ? scrolly.offsetHeight - window.innerHeight : 0;
+      }
+      function inScrolly() {
+        if (!scrolly) return false;
+        const top = scrolly.getBoundingClientRect().top;
+        const total = scrollyTotal();
+        return top <= 0 && -top < total - 2;
+      }
+      function stepScrolly(dir: number) {
+        if (!scrolly) return;
+        const total = scrollyTotal();
+        const per = total / 5;
+        const cur = -scrolly.getBoundingClientRect().top;
+        const next = Math.max(0, Math.min(total, (Math.round(cur / per) + dir) * per));
+        window.scrollTo({
+          top: scrolly.getBoundingClientRect().top + window.scrollY + next,
+          behavior: 'smooth',
+        });
+      }
+
+      // ── theme ─────────────────────────────────────────────
+      function toggleTheme() {
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        try {
+          localStorage.setItem('theme', next);
+        } catch {}
+      }
+      // ── keys ──────────────────────────────────────────────
+      document.addEventListener('keydown', (e) => {
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+        const k = e.key.toLowerCase();
+        if (['arrowright', 'arrowdown', 'pagedown', 'j', ' '].includes(k)) {
+          e.preventDefault();
+          if (inScrolly()) stepScrolly(1);
+          else go(activeIndex() + 1);
+        } else if (['arrowleft', 'arrowup', 'pageup', 'k'].includes(k)) {
+          e.preventDefault();
+          if (inScrolly()) stepScrolly(-1);
+          else go(activeIndex() - 1);
+        } else if (k === 'home') {
+          e.preventDefault();
+          go(0);
+        } else if (k === 'end') {
+          e.preventDefault();
+          go(slides.length - 1);
+        } else if (k === 't') toggleTheme();
+        else if (k === 'o') toggleToc();
+        else if (k === 'escape') closeToc();
+        else if (k === 'p') window.print();
+      });
+
+      // ── toc ───────────────────────────────────────────────
+      const ov = document.getElementById('overview')!;
+      const toc = document.getElementById('toc')!;
+      const ovBtn = null as HTMLElement | null;
+
+      slides.forEach((s, i) => {
+        const b = document.createElement('button');
+        b.innerHTML = `<span class="n">${pad(i + 1)}</span><span>${s.dataset.title ?? ''}</span>`;
+        b.addEventListener('click', () => {
+          closeToc();
+          go(i, false);
+        });
+        toc.appendChild(b);
+      });
+
+      function openToc() {
+        ov.hidden = false;
+      }
+      function closeToc() {
+        ov.hidden = true;
+      }
+      function toggleToc() {
+        ov.hidden ? openToc() : closeToc();
+      }
+      ov.addEventListener('click', (e) => {
+        if (e.target === ov) closeToc();
+      });
+
+      // ── hash entry ────────────────────────────────────────
+      const m = /^#s(\d+)$/.exec(location.hash);
+      if (m) {
+        const n = parseInt(m[1], 10) - 1;
+        if (n >= 0 && n < slides.length) {
+          idx = n;
+          setTimeout(() => go(n, false), 0);
+        }
+      }
+      paint();
+    </script>
+  </body>
+</html>
