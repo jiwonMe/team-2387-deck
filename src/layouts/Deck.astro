@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { title, total, team = 'TEAM 2387', date = '2026.11.20' } = Astro.props;
+const totalLabel = String(total).padStart(2, '0');
 ---
 
 <!doctype html>
@@ -40,6 +41,15 @@ const { title, total, team = 'TEAM 2387', date = '2026.11.20' } = Astro.props;
       <slot />
     </main>
 
+    <div class="mobilebar" id="mobilebar">
+      <button type="button" id="mb-toc">목차</button>
+      <span class="mb-count"><b id="mb-idx">01</b> / {totalLabel}</span>
+      <span class="mb-nav">
+        <button type="button" id="mb-prev" aria-label="이전 슬라이드">↑</button>
+        <button type="button" id="mb-next" aria-label="다음 슬라이드">↓</button>
+      </span>
+    </div>
+
     <div class="overview" id="overview" hidden>
       <div class="inner">
         <div class="kicker">Index</div>
@@ -53,7 +63,18 @@ const { title, total, team = 'TEAM 2387', date = '2026.11.20' } = Astro.props;
       const slides = Array.from(document.querySelectorAll<HTMLElement>('.slide'));
       let idx = 0;
 
-      function paint() {}
+      const pad = (n: number) => String(n).padStart(2, '0');
+
+      function paint() {
+        const el = document.getElementById('mb-idx');
+        if (el) el.textContent = pad(activeIndex() + 1);
+      }
+
+      // 모바일·터치: 같은 동작을 버튼/스와이프로
+      function step(dir: number) {
+        if (inScrolly()) stepScrolly(dir);
+        else go(activeIndex() + dir);
+      }
 
       function go(n: number, smooth = true) {
         n = Math.max(0, Math.min(slides.length - 1, n));
@@ -174,6 +195,39 @@ const { title, total, team = 'TEAM 2387', date = '2026.11.20' } = Astro.props;
       ov.addEventListener('click', (e) => {
         if (e.target === ov) closeToc();
       });
+
+      // ── mobile hud ────────────────────────────────────────
+      document.getElementById('mb-toc')?.addEventListener('click', toggleToc);
+      document.getElementById('mb-prev')?.addEventListener('click', () => step(-1));
+      document.getElementById('mb-next')?.addEventListener('click', () => step(1));
+
+      let touchX = 0;
+      let touchY = 0;
+      let touchAt = 0;
+      const deckEl = document.getElementById('deck');
+      deckEl?.addEventListener(
+        'touchstart',
+        (e) => {
+          const t = (e as TouchEvent).changedTouches[0];
+          touchX = t.clientX;
+          touchY = t.clientY;
+          touchAt = Date.now();
+        },
+        { passive: true }
+      );
+      deckEl?.addEventListener(
+        'touchend',
+        (e) => {
+          const t = (e as TouchEvent).changedTouches[0];
+          const dx = t.clientX - touchX;
+          const dy = t.clientY - touchY;
+          if (Date.now() - touchAt > 600) return;           // 길게 누른 동작은 무시
+          if (Math.abs(dx) < 60) return;                     // 세로 스크롤은 그대로
+          if (Math.abs(dx) < Math.abs(dy) * 1.5) return;
+          step(dx < 0 ? 1 : -1);
+        },
+        { passive: true }
+      );
 
       // ── hash entry ────────────────────────────────────────
       const m = /^#s(\d+)$/.exec(location.hash);

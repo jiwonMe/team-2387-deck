@@ -1,502 +1,460 @@
 ---
 import Deck from '../layouts/Deck.astro';
 import Slide from '../components/Slide.astro';
-import DeckDemo from '../components/DeckDemo.tsx';
+import PrioChart from '../components/PrioChart.tsx';
 
-const TOTAL = 13;
+const TOTAL = 10;
 ---
 
-<Deck title="TEAM 2387 · 고1·고2 수학 내신 대비 플랫폼" total={TOTAL}>
+<Deck title="TEAM 2387 · AI 학교별 내신 타겟팅 플랫폼" total={TOTAL}>
   {/* 01 ─────────────────────────────────────────────── */}
   <Slide id="s1" title="표지">
-    <div class="kicker">TEAM 2387<span class="sep">/</span>프로토타입 &amp; 비즈니스 모델 발표<span class="sep">/</span>2026.11.20</div>
+    <div class="kicker">TEAM 2387<span class="sep">/</span>AI 학교별 내신 타겟팅 플랫폼<span class="sep">/</span>2026.11.20</div>
     <h1 class="h1">
       남들과 같은 문제집은 그만,<br />
-      <span class="accent">우리 학교에 나올 문제</span>를 풀자.
+      <span class="accent">우리 학교 시험에 나올 문제</span>만 풀자
     </h1>
     <p class="lead">
-      부교재 · 기출 · 학평을 겹쳐 읽고 그 근거로 문항을 생성하는 <b>고1·고2 수학 내신 대비 플랫폼</b>.
-      생성 문항과 검수 문항을 함께 주는 것이 핵심입니다.
+      로컬 학원의 분석력 한계를 넘어, <b>학생이 스스로 쥐는 AI 학교별 내신 타겟팅 플랫폼</b>입니다.
+      학원 강사의 감과 수작업에 묶여 있던 학교별 내신 분석을 AI로 고도화해 학생에게 직접 해방시키는 B2C 서비스입니다.
     </p>
 
-    <div class="rowhead">
-      <span class="n">THESIS</span><h3>학교당 5명으로 성립하는 마이크로 내신 SaaS</h3>
-      <span class="meta">Commercial due diligence 관점</span>
+    <div class="band b3" style="margin-top:22px">
+      <div class="cell">
+        <div class="ck">지금 · 선택지 A</div>
+        <div class="ch">전국 공통 문제집</div>
+        <div class="cd">내신은 로컬 게임인데, 전국에 같은 단원 문제를 팝니다</div>
+      </div>
+      <div class="cell">
+        <div class="ck">지금 · 선택지 B</div>
+        <div class="ch">로컬 학원 프린트 더미</div>
+        <div class="cd">수백 장이지만, 어디서 나왔는지 아무도 설명하지 못합니다</div>
+      </div>
+      <div class="cell out">
+        <div class="ck">우리 · 학생이 직접</div>
+        <div class="ch">우리 학교 출제 우선순위</div>
+        <div class="cd">태블릿을 열면 1순위부터, 근거와 함께 나옵니다</div>
+      </div>
     </div>
-    <div class="rows">
-      <div class="row">
-        <div class="k">PROTOTYPE</div>
-        <div class="v">부교재·기출 입력 → <b>출처 역추적 리포트</b> → 문항 세트 → 해설 → 적중 리포트 <b>5화면</b></div>
-      </div>
-      <div class="row">
-        <div class="k">PROOF</div>
-        <div class="v">비학군지 일반고 <span class="ph">3곳</span> 기출로 <b>레시피 유지율 · 적중률 · 교사 판정</b> 백테스팅</div>
-      </div>
-      <div class="row">
-        <div class="k">BUSINESS MODEL</div>
-        <div class="v">학기 패스 + 학교별 특강. 학교당 <b>5명이면 손익분기</b>, 10명이면 공헌이익 43%</div>
-      </div>
-      <div class="row">
-        <div class="k">ASK</div>
-        <div class="v">3개월 안에 <b>5인 개설 성공률 40%</b>를 확인할 파일럿 파트너</div>
+
+    <div class="point">
+      <span class="tag">Investor point</span>
+      <div class="b">
+        단순 문제 은행이 아닙니다. 사교육에서 가장 큰 비중을 차지하는 <b>오프라인 로컬 내신 학원의 핵심 가치</b>를
+        AI로 직접 <b>대체·고도화</b>하는 프로젝트입니다.
       </div>
     </div>
   </Slide>
 
   {/* 02 ─────────────────────────────────────────────── */}
-  <Slide id="s2" title="시장 공백">
-    <div class="kicker">01<span class="sep">/</span>문제</div>
-    <h2 class="h2">비학군지 일반고는 "모수가 작아서" 서비스되지 않습니다</h2>
-    <p class="sub">
-      내신 수요는 있는데, 사람이 학교마다 대응하는 방식으로는 손익분기가 맞지 않습니다.
-      마케팅 부족이 아니라 <b>원가 구조의 문제</b>입니다.
-    </p>
+  <Slide id="s2" title="시장의 상식">
+    <div class="kicker">01<span class="sep">/</span>파괴할 상식</div>
+    <h2 class="h2">시중 문제집은 '전국 공통'이라 틀렸고, 로컬 학원은 '분석력이 복불복'이라 위험합니다</h2>
 
-    <div class="stats" style="margin-top:24px">
-      <div>
-        <div class="v">1,200곳</div>
-        <div class="l">전국 고교 2,387곳 중 <b>비학군지 일반고</b>. 대형사의 영업 반경 밖</div>
+    <div class="cols" style="margin-top:24px">
+      <div class="c">
+        <div class="ck">1단계 한계 · 시중 문제집 · 대형 인강</div>
+        <div class="ch">적중성의 부재</div>
+        <div class="cd">내신은 철저히 학교별 로컬 게임인데, 전국에 똑같은 단원별 문제를 팝니다.</div>
       </div>
-      <div>
-        <div class="v">18명</div>
-        <div class="l">학년 180명 기준 <b>5등급제 1등급(상위 10%)</b>. 이 안에서만 승부합니다</div>
+      <div class="c">
+        <div class="ck">2단계 한계 · 오프라인 로컬 학원</div>
+        <div class="ch">분석 품질의 비대칭</div>
+        <div class="cd">학교별 특화를 말하지만 실제 분석 수준은 학원마다 극심한 편차. 강사 한 명이 수십 개 학교의 부교재·기출·학평 변형 계보를 <b>수작업으로 꿰뚫는 것은 물리적으로 불가능</b>합니다.</div>
       </div>
-      <div>
-        <div class="v">50명+</div>
-        <div class="l">강사·자료·운영 고정비를 덮는 <b>인간 기반 대비의 손익분기</b></div>
+      <div class="c">
+        <div class="ck">결과</div>
+        <div class="ch">비싼 돈을 내도 남는 불안</div>
+        <div class="cd">프린트 양은 많은데, "왜 이 문제가 나오는지"는 아무도 답하지 못합니다.</div>
       </div>
     </div>
 
-    <div class="rows">
+    <div class="rows" style="margin-top:18px">
       <div class="row">
-        <div class="k">강사 원가</div>
-        <div class="v">학교별 특강은 강사·자료·운영비가 <b>학교마다 고정</b>으로 발생 → 학교당 50명 이상 필요</div>
+        <div class="k">선택지 A · 시중 독학</div>
+        <div class="v">전국 공통 → <b>적중성 부재</b>. 우리 학교 범위·부교재와 무관한 문제를 풉니다</div>
       </div>
       <div class="row">
-        <div class="k">모수</div>
-        <div class="v">타겟 학교의 1등급은 18명, 최상위 절반은 8~10명 → <b>인간 기반 대비는 구조적 적자</b></div>
+        <div class="k">선택지 B · 로컬 학원 내신반</div>
+        <div class="v">강사 개인 역량에 의존 → <b>분석 품질의 비대칭</b>. 같은 학교 학생인데 학원별로 받는 대비가 다릅니다</div>
       </div>
       <div class="row">
-        <div class="k">유통</div>
-        <div class="v">대형사는 학군지 거점 오프라인 중심 → 비학군지는 <b>도달 비용이 기대 매출을 넘음</b></div>
+        <div class="k">공통 결론</div>
+        <div class="v">두 선택지 모두 <b>학교 단위 정밀도를 갖지 못합니다</b>. 그런데 내신은 학교 단위로만 결정됩니다</div>
       </div>
     </div>
-    <p class="foot-note">
-      등급 기준: 2025년 고1부터 5등급제. 1등급 = 상위 10%. 이후 모든 계산은 이 기준 하나로 통일합니다.
-    </p>
   </Slide>
 
   {/* 03 ─────────────────────────────────────────────── */}
-  <Slide id="s3" title="타이밍과 시장 규모">
-    <div class="kicker">02<span class="sep">/</span>타이밍 · 규모</div>
-    <h2 class="h2">단가가 무너지며, 20명짜리 시장이 처음 계산에 들어왔습니다</h2>
+  <Slide id="s3" title="Why & Who">
+    <div class="kicker">02<span class="sep">/</span>Why · Who</div>
+    <h2 class="h2">로컬 학원의 들쭉날쭉한 역량에 기대지 않고, 학생 스스로 '최상위 출제 분석'을 소유합니다</h2>
 
-    <div class="stats" style="margin-top:20px">
-      <div>
-        <div class="v">5등급제</div>
-        <div class="l">2025년 고1부터 적용. 내신 변별력 확대로 <b>학교별 대응이 필수</b></div>
+    <div class="rows" style="margin-top:20px">
+      <div class="row">
+        <div class="k">Why · 돈을 내는 이유</div>
+        <div class="v">강사의 감에 의존한 수백 장의 불안한 프린트가 아니라, <b>"왜 이 문제가 나올 수밖에 없는지"가 데이터로 입증된 확실한 타겟 문항</b>을 원합니다</div>
       </div>
-      <div>
-        <div class="v">200원 / 문항</div>
-        <div class="l">AI 변형 제작 단가. 수작업 1만 원+ 대비 붕괴 → <b>소규모 학교도 수익권</b></div>
+      <div class="row">
+        <div class="k">Who · 핵심 타깃</div>
+        <div class="v">로컬 학원의 천편일률적인 기출 짜깁기 수업에 한계를 느끼고, <b>내 학교 시험에 나올 문제만 스스로 밀도 있게 타격</b>하려는 고1·2 학생</div>
       </div>
-      <div>
-        <div class="v">47.7%</div>
-        <div class="l">고교생의 주 1회 이상 학습 AI 사용률. <b>도입 장벽이 낮음</b></div>
+      <div class="row">
+        <div class="k">배제 · 하지 않습니다</div>
+        <div class="v">단순 양치기 문제 은행 유저 · 정시 올인 학생 · <b>학원 강사 보조용 B2B 납품 모델</b></div>
       </div>
     </div>
 
-    <div class="rowhead"><span class="n">SIZING</span><h3>하향식 7.8조가 아니라, 학교 수에서 곱해 올라간 시장</h3><span class="meta">Bottom-up</span></div>
+    <div class="rowhead"><span class="n">SHIFT</span><h3>가치 사슬 단축 — 중간 가공 단계를 걷어냅니다</h3><span class="meta">Disintermediation</span></div>
     <table class="tbl">
-      <thead><tr><th>단계</th><th>산식</th><th class="num" style="text-align:right">규모</th></tr></thead>
+      <thead><tr><th>구분</th><th>흐름</th><th>결과</th></tr></thead>
       <tbody>
-        <tr><td>타겟 학교</td><td>전국 고교 2,387곳 중 비학군지 일반고</td><td class="num">1,200곳</td></tr>
-        <tr><td>학교당 결제 가능 모수</td><td>1등급 18명 × 정원 해제 후 상위 20%</td><td class="num">36~72명</td></tr>
-        <tr><td>학교당 연 매출</td><td>72명 × 2학기 × 객단가 15만</td><td class="num">2,160만</td></tr>
-        <tr class="total"><td>SAM</td><td>1,200곳 × 2,160만</td><td class="num pos">약 260억</td></tr>
-        <tr><td>3년 SOM (Phase 1)</td><td>120곳 × 2,160만 · 수학 직판</td><td class="num">26억</td></tr>
-        <tr><td>Phase 2 — 정원 해제 + 국·영 확장</td><td>480곳 × 모수 ×3</td><td class="num">약 120억</td></tr>
-        <tr><td>Phase 3 — 미개설교 B2B + 고3 연계</td><td>학원 라이선스 · 내신·수능 연결</td><td class="num">300억+</td></tr>
+        <tr><td>과거</td><td>학교 자료 → <b>로컬 강사</b>(수작업·편차) → 학생</td><td>학교당 20명 이상 필요 · 품질 복불복</td></tr>
+        <tr><td>현재</td><td>학교 자료 → <b>AI 교차 분석 엔진</b>(표준화) → 학생 직접</td><td>1인당 원가 급감 · 품질 균일</td></tr>
       </tbody>
     </table>
-    <p class="foot-note">고3·수능은 제외한 보수적 산정. Phase 2·3은 각 단계 검증 KPI 통과 시에만 진입합니다.</p>
+
+    <div class="point">
+      <span class="tag">Investor point</span>
+      <div class="b">
+        중간 유통·가공 단계를 AI로 직결(Direct-to-Consumer)할 때 발생하는 <b>압도적 품질 우위</b>와
+        <b>가격 경쟁력</b>이 이 사업의 구조적 원천입니다.
+      </div>
+    </div>
   </Slide>
 
   {/* 04 ─────────────────────────────────────────────── */}
-  <Slide id="s4" title="엔진">
-    <div class="kicker">03<span class="sep">/</span>구조</div>
-    <h2 class="h2">단원 비중이 아니라, 출제자의 변형 레시피를 역추적합니다</h2>
-    <p class="sub">
-      다항식 42%는 범위표만 봐도 아는 수준입니다. 돈을 내는 이유는 <b>어떻게 변형해서 내는지</b>입니다.
-    </p>
+  <Slide id="s4" title="솔루션">
+    <div class="kicker">03<span class="sep">/</span>솔루션</div>
+    <h2 class="h2">사람이 수작업으로 찾을 수 없던 '부교재 × 기출 × 학평'의 출제 교집합을 AI가 도출합니다</h2>
 
-    <div class="diagram" style="margin-top:14px">
+    <div class="diagram" style="margin-top:18px">
       <div class="band b3">
         <div class="cell">
-          <div class="ck">Input 1</div><div class="ch">부교재 메타DB</div>
-          <div class="cd">시중 상위 20종 교재를 미리 태깅(단원·유형·난도). 본문은 저장하지 않음</div>
+          <div class="ck">Input 1</div><div class="ch">우리 학교 부교재</div>
+          <div class="cd">학생이 직접 올립니다. 단원·유형·난도 구조 추출</div>
         </div>
         <div class="cell">
-          <div class="ck">Input 2</div><div class="ch">학교 기출</div>
-          <div class="cd">촬영·분석 후 즉시 파기. 남는 것은 문항별 출처 태그</div>
+          <div class="ck">Input 2</div><div class="ch">과거 기출</div>
+          <div class="cd">어느 단원에서 몇 문항, 어떤 변형이 반복되는지</div>
         </div>
         <div class="cell">
-          <div class="ck">Input 3</div><div class="ch">최근 학평</div>
-          <div class="cd">교육청·평가원·EBS. 내신 변형의 원형이 되는 문항군</div>
+          <div class="ck">Input 3</div><div class="ch">최근 학력평가</div>
+          <div class="cd">교육청·평가원. 내신 변형의 원형이 되는 문항군</div>
         </div>
       </div>
-      <div class="arrow"><span class="s">trace · match</span><span class="c"></span></div>
+      <div class="arrow"><span class="s">cross · match</span><span class="c"></span></div>
       <div class="band">
         <div class="cell engine">
           <div class="ck">Engine</div>
-          <div class="ch">출처 역추적 · 변형 레시피 추출</div>
+          <div class="ch">3중 교차 구조 매칭</div>
           <div class="cd">
-            작년 기말 22문항을 역추적 → <b>부교재 숫자변형 41% · 조건추가 23% · 학평 킬러 차용 18% · 교과서 18%</b>.
-            이 레시피를 올해 범위에 그대로 적용해 문항을 만듭니다.
+            눈으로 비슷한 그림을 찾는 수준이 아니라, <b>문항의 조건 구조와 풀이 논리 단위</b>로 출제 교집합과 변형 공식을 역추적합니다.
           </div>
         </div>
       </div>
-      <div class="arrow"><span class="s">generate · assemble</span><span class="c"></span></div>
+      <div class="arrow"><span class="s">report · generate</span><span class="c"></span></div>
       <div class="band b2">
         <div class="cell out">
-          <div class="ck">Output 1 · 생성</div><div class="ch">신규 생성 문항 60%</div>
-          <div class="cd">레시피 태그를 붙여 생성. 자동 검증 → 교과 검수 → 강사 최종 확인 통과분만 노출</div>
+          <div class="ck">Output 1</div><div class="ch">출제 우선순위 리포트</div>
+          <div class="cd">이번 시험 1순위부터 소거 영역까지 — 학습 전략이 즉시 섭니다</div>
         </div>
         <div class="cell out">
-          <div class="ck">Output 2 · 검수</div><div class="ch">검수 문항 40%</div>
-          <div class="cd">공공기출 재해설 DB + 대성 비독점 라이선스. 세트의 품질 하한선</div>
+          <div class="ck">Output 2</div><div class="ch">근거 있는 맞춤 문항 세트</div>
+          <div class="cd">검수 문항 + 생성 문항. 모든 문항에 출제 근거 라벨</div>
         </div>
       </div>
     </div>
 
-    <div class="ph-block">
-      <span class="tag-i">검증 필요 — 레시피 지속성</span>
-      중간고사에서 뽑은 레시피가 기말에도 남는가? <b>검증 학교 <span class="ph">N곳</span> · 직전→직후 패턴 유지율 <span class="ph">0.00</span> (코사인 유사도) · 표본 <span class="ph">N</span>학기</b>
-    </div>
-  </Slide>
-
-  {/* 05 ── 백테스팅 (신규) ─────────────────────────────── */}
-  <Slide id="s5" title="백테스팅">
-    <div class="kicker">04<span class="sep">/</span>실증</div>
-    <h2 class="h2">가설이 아니라, 실제 기출로 돌려본 결과입니다</h2>
-    <p class="sub">
-      <span class="ph">2026 1학기 중간</span> 기출 + 부교재로 레시피를 뽑고, 기말 예상 <span class="ph">60</span>문항을 생성해
-      실제 기말 <span class="ph">22</span>문항과 대조했습니다.
-    </p>
-
-    <div class="stats" style="margin-top:22px">
-      <div>
-        <div class="v"><span class="ph">__%</span></div>
-        <div class="l"><b>출제 원천 적중률</b> — 실제 문항 중 부교재·학평 변형 출처가 일치 (<span class="ph">__/22</span>)</div>
-      </div>
-      <div>
-        <div class="v"><span class="ph">__%</span></div>
-        <div class="l"><b>변형 메커니즘 적중률</b> — 조건 추가·발문 역전 등 <b>변형 기법까지</b> 일치 (<span class="ph">__/22</span>)</div>
-      </div>
-      <div>
-        <div class="v"><span class="ph">__%</span></div>
-        <div class="l"><b>교사 블라인드 통과율</b> — 생성 문항 중 "그대로 출제 가능" 판정 (<span class="ph">__/60</span>)</div>
-      </div>
-    </div>
-
-    <div class="rowhead"><span class="n">SAMPLE</span><h3>비학군지 일반고 검증 결과</h3><span class="meta">학교별 1학기</span></div>
-    <table class="tbl">
-      <thead>
-        <tr><th>학교</th><th>분석 문항</th><th class="num">원천 적중</th><th class="num">메커니즘 적중</th><th class="num">교사 판정</th></tr>
-      </thead>
+    <table class="tbl" style="margin-top:14px">
+      <thead><tr><th>분석 방식</th><th>로컬 학원</th><th>본 플랫폼</th></tr></thead>
       <tbody>
-        <tr><td><span class="ph">A고 · 지역</span></td><td class="num">22</td><td class="num"><span class="ph">__</span></td><td class="num"><span class="ph">__</span></td><td class="num"><span class="ph">__</span></td></tr>
-        <tr><td><span class="ph">B고 · 지역</span></td><td class="num">22</td><td class="num"><span class="ph">__</span></td><td class="num"><span class="ph">__</span></td><td class="num"><span class="ph">__</span></td></tr>
-        <tr><td><span class="ph">C고 · 지역</span></td><td class="num">22</td><td class="num"><span class="ph">__</span></td><td class="num"><span class="ph">__</span></td><td class="num"><span class="ph">__</span></td></tr>
-        <tr class="total"><td>합계 / 평균</td><td class="num">66</td><td class="num pos"><span class="ph">__%</span></td><td class="num pos"><span class="ph">__%</span></td><td class="num pos"><span class="ph">__%</span></td></tr>
+        <tr><td>매칭 단위</td><td>키워드 · 단원 · 눈에 보이는 그림</td><td><b>조건 구조 · 풀이 논리 · 변형 공식</b></td></tr>
+        <tr><td>범위</td><td>강사 1인이 감당 가능한 몇 개 학교</td><td>전국 모든 학교 (수작업 0)</td></tr>
       </tbody>
     </table>
-    <p class="foot-note">
-      지표 정의 — 원천 적중: 출제 문항의 원형이 우리 DB에서 특정됨 · 메커니즘 적중: 변형 기법(조건추가·발문역전·함수합성)까지 일치 ·
-      교사 판정: 현직 교사 3인 블라인드, 3점 척도 중 2점 이상.
-    </p>
   </Slide>
 
-  {/* 06 ── 스크롤로 5화면을 넘기는 구간 ─────────────────── */}
-  <section class="slide scrolly" id="s6" data-title="프로토타입">
-    <div class="scrolly-sticky">
-      <div class="scrolly-inner">
-        <div class="kicker">05<span class="sep">/</span>프로토타입</div>
-        <h2 class="h2">스크롤하면 5화면이 차례로 넘어갑니다</h2>
-        <p class="sub" style="margin-bottom:0">
-          2번 <b>출처 역추적 리포트</b>가 이 제품의 핵심 화면입니다. 계속 스크롤하세요.
-        </p>
-        <DeckDemo client:load scrolly />
+  {/* 05 ─────────────────────────────────────────────── */}
+  <Slide id="s5" title="제품 ① 우선순위 리포트">
+    <div class="kicker">04<span class="sep">/</span>제품 경험 ①</div>
+    <h2 class="h2">학원 선생님의 막연한 "이거 중요해" 대신, 데이터로 산출된 1순위부터 풉니다</h2>
+    <p class="sub">단원 목차 대신 <b>먼저 공략할 순위</b>와 <b>버릴 영역</b>을 먼저 보여줍니다.</p>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-[1.2fr_0.8fr]" style="margin-top:16px">
+      <div class="mock">
+        <div class="mock-h"><b>OO고 2학년 1학기 중간</b> 출제 우선순위 리포트</div>
+        <div class="mock-b">
+          <ol class="rank">
+            <li>
+              <span class="rk">01</span>
+              <span class="t">부교재 3단원 고난도 · 조건변형</span>
+              <span class="p">92</span>
+              <span class="why">최근 3년 연속 기출 + 올해 부교재 고난도 문항 중복 배치</span>
+            </li>
+            <li>
+              <span class="rk">02</span>
+              <span class="t">수열 추론 · 발문 역전</span>
+              <span class="p">81</span>
+              <span class="why">2025 학평 29번 변형 계보 · 우리 학교 2회 반복</span>
+            </li>
+            <li>
+              <span class="rk">03</span>
+              <span class="t">이차함수 그래프 · 서술형</span>
+              <span class="p">64</span>
+              <span class="why">기출 서술형 3문항 중 2문항이 이 유형</span>
+            </li>
+            <li>
+              <span class="rk">04</span>
+              <span class="t">확률 · 경우의 수</span>
+              <span class="p">48</span>
+              <span class="why">범위에는 있으나 최근 3년간 1회 출제</span>
+            </li>
+          </ol>
+          <div class="drop">소거 영역 — 도형의 이동 · 학평에만 등장, 우리 학교 3년간 0회</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-center">
+        <div class="mono text-[9.5px] uppercase tracking-[0.12em] text-fg3 mb-2">출제 확률 (0–100)</div>
+        <PrioChart client:load />
       </div>
     </div>
-  </section>
+
+    <div class="point">
+      <span class="tag">Investor point</span>
+      <div class="b">
+        학원 강사의 구두 코칭이 없어도 <b>제품 UI 자체가 학습 우선순위를 리드</b>합니다.
+        사람이 개입하지 않는 Self-Serve 프로덕트라는 뜻입니다.
+      </div>
+    </div>
+  </Slide>
+
+  {/* 06 ─────────────────────────────────────────────── */}
+  <Slide id="s6" title="제품 ② 맞춤 문항">
+    <div class="kicker">05<span class="sep">/</span>제품 경험 ②</div>
+    <h2 class="h2">검수 문항과 AI 생성 문항을 결합하고, 모든 문제에 '출제 근거'를 박아줍니다</h2>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2" style="margin-top:16px">
+      <div class="mock">
+        <div class="mock-h"><b>07번</b> · 생성 60% / 검수 40% 혼합 세트</div>
+        <div class="mock-b">
+          <span class="qtag">근거 · 올해 부교재 42p × 2025 기출 15번 결합형</span>
+          <div class="mt-3 text-[13px] leading-[1.8]">
+            실수 <b>k&gt;0</b> 에 대하여 x³ − 6x² + 11x − 6 = 0 의 근을 판별할 때, 옳은 것은?
+          </div>
+          <div class="mt-3 flex flex-col gap-[5px] text-[11.5px] text-fg2">
+            <div>① 서로 다른 세 실근</div>
+            <div>② 한 실근과 두 허근</div>
+            <div>③ 중근을 갖는다</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="qtag">조건 추가</span>
+            <span class="qtag" style="color:var(--fg2);border-color:var(--line);background:var(--fill)">자동 검증 ✓</span>
+            <span class="qtag" style="color:var(--fg2);border-color:var(--line);background:var(--fill)">강사 최종 확인 ✓</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock">
+        <div class="mock-h"><b>원전 비교</b> · 조건 변형 카드</div>
+        <div class="mock-b grid grid-cols-1 gap-3">
+          <div class="rounded-[6px] border border-line2 p-3">
+            <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-fg3 mb-1.5">원전 · 올림포스 p.42 #14</div>
+            <div class="text-[11.5px] leading-[1.7] text-fg2">x³ − 6x² + 11x − 6 = 0 의 근을 구하시오.</div>
+          </div>
+          <div class="text-center font-mono text-[10px] text-accent">↓ 조건 추가 · 발문 전환</div>
+          <div class="rounded-[6px] border border-accent/40 bg-accent/10 p-3">
+            <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-accent mb-1.5">변형 · 07번</div>
+            <div class="text-[11.5px] leading-[1.7] text-fg">k&gt;0 조건을 붙여 <b>근의 성질 판별</b>로 발문 전환</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="point">
+      <span class="tag">Investor point</span>
+      <div class="b">
+        생성형 AI를 쓰되 <b>검수 문항 결합 + 원전 근거 매칭</b>으로 환각·오류 리스크를 통제했습니다.
+        "AI가 만들었다"가 아니라 <b>"근거가 있다"</b>를 파는 제품입니다.
+      </div>
+    </div>
+  </Slide>
 
   {/* 07 ─────────────────────────────────────────────── */}
-  <Slide id="s7" title="차별점">
-    <div class="kicker">06<span class="sep">/</span>차별점</div>
-    <h2 class="h2">강자가 3개월 만에 따라 하면 어떻게 되는가</h2>
-    <p class="sub">
-      기능은 복제됩니다. 복제되지 않는 것은 <b>기존 고객과의 이해상충</b>, 그리고 <b>교사 코호트 단위 파라미터</b>입니다.
-    </p>
+  <Slide id="s7" title="적중 루프">
+    <div class="kicker">06<span class="sep">/</span>성장 루프</div>
+    <h2 class="h2">시험 직후 발행되는 '적중 리포트'가 같은 반 친구를 데려오는 가장 강력한 마케터입니다</h2>
 
-    <div class="rows" style="margin-top:16px">
-      <div class="row">
-        <div class="k">매쓰플랫이 못 하는 이유</div>
-        <div class="v">매출의 대부분이 <b>학원·교사 B2B</b>. 학원에 파는 회사가 학생에게 직접 "우리 학교 1등급만" 팔면 <b>고객사와 정면 충돌</b> — 전형적 이노베이터 딜레마</div>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2" style="margin-top:18px">
+      <div class="mock">
+        <div class="mock-h"><b>실제 출제</b> · 2026 1학기 중간 15번</div>
+        <div class="mock-b">
+          <div class="text-[11.5px] leading-[1.75] text-fg2">
+            수열 aₙ이 a₁=3, aₙ₊₁ = 2aₙ + 1 을 만족할 때, a₅의 값은?
+          </div>
+        </div>
       </div>
-      <div class="row">
-        <div class="k">기술적 차이</div>
-        <div class="v">기존 DB는 <b>단원·유형 매칭</b>. 우리는 <b>출제자·코호트별 변형 파라미터</b>(조건 추가 빈도, 발문 역전 습관)를 누적 — 학교 단위로만 학습되는 데이터</div>
-      </div>
-      <div class="row">
-        <div class="k">ChatGPT와의 차이</div>
-        <div class="v">내 학교 기출 이력이 없고, <b>수식 환각</b>이 남습니다. 우리는 근거 → 생성 → 3단 검증 → 해설이 한 줄로 연결</div>
+      <div class="mock" style="border-color:color-mix(in srgb, var(--accent) 45%, transparent)">
+        <div class="mock-h"><b style="color:var(--accent)">우리 예측</b> · 세트 07번</div>
+        <div class="mock-b">
+          <div class="text-[11.5px] leading-[1.75] text-fg2">
+            a₁=3, aₙ₊₁ = 2aₙ + 1 에서 a₅를 구하는 <b style="color:var(--fg)">동일 구조</b> — 숫자만 변형
+          </div>
+          <div class="mt-3"><span class="qtag">적중 · 구조 일치</span></div>
+        </div>
       </div>
     </div>
 
-    <table class="tbl">
-      <thead><tr><th>대안</th><th>한계</th></tr></thead>
-      <tbody>
-        <tr><td>매쓰플랫 · 매쓰프로</td><td>9,500개 기관·110만 문항. 그러나 <b>강사용 도구</b>이고 B2C 전환 시 고객사와 충돌</td></tr>
-        <tr><td>대형 인강</td><td>전국 공통·고3 중심. <b>우리 학교 범위가 반영되지 않음</b></td></tr>
-        <tr><td>학군지 한정 서비스</td><td>일부 지역·학교만 커버. <b>다른 학교 학생은 받을 수 없음</b></td></tr>
-      </tbody>
-    </table>
+    <div class="rowhead"><span class="n">FLYWHEEL</span><h3>마케터 없이 도는 4단계</h3><span class="meta">Product-led growth</span></div>
+    <div class="rows">
+      <div class="row">
+        <div class="k">1 · 검증</div>
+        <div class="v">시험 직후 <b>적중 리포트 즉시 발행</b> — 학원은 얼버무리는 부분을 1:1 대조로 보여줍니다</div>
+      </div>
+      <div class="row">
+        <div class="k">2 · 공유</div>
+        <div class="v">적중 카드 캡처가 <b>같은 학교 단톡방</b>에서 가장 강력한 가입 트리거가 됩니다</div>
+      </div>
+      <div class="row">
+        <div class="k">3 · 락인</div>
+        <div class="v">눈으로 적중을 확인한 학생은 <b>기말고사에 재결제</b>합니다</div>
+      </div>
+      <div class="row">
+        <div class="k">4 · 확장</div>
+        <div class="v">같은 학교 다음 학기 → 옆 학교로. <b>영업 조직·대형 광고 없이</b> 학교 단위로 번집니다</div>
+      </div>
+    </div>
   </Slide>
 
   {/* 08 ─────────────────────────────────────────────── */}
-  <Slide id="s8" title="공급망">
-    <div class="kicker">07<span class="sep">/</span>공급망</div>
-    <h2 class="h2">검수 병목은 '시험 기간'에만 터집니다 — 그래서 미리 만듭니다</h2>
+  <Slide id="s8" title="리스크 방어">
+    <div class="kicker">07<span class="sep">/</span>리스크</div>
+    <h2 class="h2">학생이 올린 원본은 분석 즉시 파기하고 구조만 남깁니다</h2>
 
-    <div class="stats" style="margin-top:20px">
-      <div>
-        <div class="v">78.8%</div>
-        <div class="l">최상위 모델이 만든 문항 중 <b>풀이·정답·교육적 적절성</b>을 동시에 충족한 비율</div>
+    <div class="band b3" style="margin-top:22px">
+      <div class="cell">
+        <div class="ck">Step 1</div><div class="ch">학생 자료 업로드</div>
+        <div class="cd">부교재·기출 원본이 학생 기기에서 서버로</div>
       </div>
-      <div>
-        <div class="v">700원 / 문항</div>
-        <div class="l">생성 200 + 검수 500. 검수는 <b>문항당 2~3분 × 시급 1.5만</b> 환산</div>
+      <div class="cell">
+        <div class="ck">Step 2</div><div class="ch">실시간 구조 분석</div>
+        <div class="cd">수학적 조건 구조 · 출제 메타데이터만 추출</div>
       </div>
-      <div>
-        <div class="v">10배</div>
-        <div class="l">시험 3주에 몰리는 <b>첨두부하(Peak-to-Average)</b>. 평시 인력으로는 불가</div>
+      <div class="cell">
+        <div class="ck">Step 3</div><div class="ch">원본 즉시 영구 파기</div>
+        <div class="cd">파일·타이핑 본을 서버에 남기지 않음</div>
+      </div>
+    </div>
+    <div class="arrow"><span class="s">only structure remains</span><span class="c"></span></div>
+    <div class="band">
+      <div class="cell out">
+        <div class="ck">Step 4</div><div class="ch">출제 프로필 DB 반영</div>
+        <div class="cd">학교별 출제 구조만 축적 → 다음 학기 정확도 상승. 원본은 어디에도 없습니다</div>
       </div>
     </div>
 
-    <div class="rowhead"><span class="n">PEAK</span><h3>첨두부하를 어떻게 소화하는가</h3><span class="meta">Pre-generation 70 : JIT 30</span></div>
-    <div class="rows">
+    <div class="rows" style="margin-top:14px">
       <div class="row">
-        <div class="k">학기 초 (D-90)</div>
-        <div class="v">부교재 확정 시점에 <b>기본 변형 70%를 사전 생성·검수 완료</b> → 시험 기간 부하의 대부분을 미리 소진</div>
+        <div class="k">차이 1</div>
+        <div class="v">족보 사이트·학원은 원본 파일을 무단 공유하다 분쟁에 휘말립니다. 우리는 <b>추상화된 구조 데이터만</b> 다룹니다</div>
       </div>
       <div class="row">
-        <div class="k">시험 3주 전</div>
-        <div class="v">기출 업로드 후 <b>학교별 가중치로 최종 조합</b>. 즉시 생성(Just-in-Time)은 <b>30% 이하로 상한</b></div>
-      </div>
-      <div class="row">
-        <div class="k">검수 처리량</div>
-        <div class="v">강사 1인당 <b>일일 최대 검수 <span class="ph">N</span>문항</b> · 시험 기간 시간제 <span class="ph">N</span>명 투입 · 최대 동시 개설 <span class="ph">N</span>교</div>
+        <div class="k">차이 2</div>
+        <div class="v">구조 데이터는 학교 저작물이 아니므로 <b>전국 모든 고등학교로 제약 없이 확장</b>할 수 있습니다</div>
       </div>
     </div>
-    <p class="foot-note">
-      원천: 공공기출 재해설 DB 25% + 대성 비독점 라이선스 15% + 자체 검수 강사 풀(전 문항). 자체 DB 비중을 매 학기 올려 라이선스 의존을 낮춥니다.
-    </p>
   </Slide>
 
   {/* 09 ─────────────────────────────────────────────── */}
-  <Slide id="s9" title="리스크">
-    <div class="kicker">08<span class="sep">/</span>리스크</div>
-    <h2 class="h2">업로드를 받는 순간, "원본 미보관"만으로는 부족합니다</h2>
-    <p class="sub">
-      저작권법 제32조는 영리 목적 이용에 예외를 인정하지 않고, 고교 시험문제의 저작물성도 인정된 판례가 있습니다.
-      그래서 기능이 아니라 <b>설계로</b> 방어합니다.
-    </p>
+  <Slide id="s9" title="유닛 이코노믹스">
+    <div class="kicker">08<span class="sep">/</span>유닛 이코노믹스</div>
+    <h2 class="h2">오프라인 학원은 학교별 반을 열려면 강의실과 강사가 필요하지만, 우리는 5명이면 수익이 납니다</h2>
 
-    <div class="rows" style="margin-top:10px">
-      <div class="row">
-        <div class="k">부교재</div>
-        <div class="v"><b>사전 메타DB로 대체</b> — 시중 20종은 본문을 받지 않고 카탈로그에서 선택. 원본이 서버에 들어오지 않음</div>
+    <div class="rowhead"><span class="n">BEP</span><h3>학교 하나를 열 때 필요한 결제 인원</h3><span class="meta">단위: 명</span></div>
+    <table class="tbl">
+      <thead><tr><th>구분</th><th class="num">로컬 학원 내신반</th><th class="num">본 플랫폼</th></tr></thead>
+      <tbody>
+        <tr><td>손익분기 인원</td><td class="num">15~20명</td><td class="num pos">5명</td></tr>
+        <tr><td>고정비</td><td class="num">강의실 · 강사 인건비</td><td class="num">없음 (AI 파이프라인)</td></tr>
+        <tr><td>학생 1명당 원가</td><td class="num">강사 시수에 비례</td><td class="num">문항 700원 · 학생 수와 무관</td></tr>
+        <tr><td>열리지 않는 학교</td><td class="num">모수 15명 미만 = 방치</td><td class="num pos">전국 1,200곳 전부</td></tr>
+      </tbody>
+    </table>
+
+    <div class="stats" style="margin-top:18px">
+      <div>
+        <div class="v">5명</div>
+        <div class="l">매출 75만 · 콘텐츠 21 · 분석 5 · 운영 30 · 채널 15 → <b>손익분기</b></div>
       </div>
-      <div class="row">
-        <div class="k">기출</div>
-        <div class="v">촬영·분석 후 <b>즉시 파기</b>. 원본 축적·공유 없이 통계 태그만 보존</div>
+      <div>
+        <div class="v">10명</div>
+        <div class="l">공헌이익 <b>64만 (43%)</b> — 개설 성공 학교의 표준 시나리오</div>
       </div>
-      <div class="row">
-        <div class="k">유사성 필터</div>
-        <div class="v">생성 문항을 원본과 <b>수치·문장 n-gram으로 비교</b>, 임계 초과분은 폐기. 파이프라인 마지막 관문</div>
-      </div>
-      <div class="row">
-        <div class="k">출판사 레버리지</div>
-        <div class="v">우리가 주는 것 — <b>학교별 부교재 채택 데이터</b> + <b>정품 교재 구매 인증 연동</b>(불법 PDF 유통 차단). 허락의 반대급부가 명확합니다</div>
+      <div>
+        <div class="v">1,200곳</div>
+        <div class="l">학원이 내신반을 열어주지 못한 <b>롱테일 시장</b>까지 수익화</div>
       </div>
     </div>
-    <div class="ph-block">
-      <span class="tag-i">채워넣기 — 계약 현황</span>
-      <b>대성 비독점 라이선스 — <span class="ph">협상 단계 / 조건</span></b> · 출판사 컨택 <span class="ph">N곳 중 N곳</span> · 법률 검토 <span class="ph">자문 여부</span>
+
+    <div class="point">
+      <span class="tag">Investor point</span>
+      <div class="b">
+        대치동 같은 학군지만의 사업이 아닙니다. <b>학원이 손익 때문에 포기한 전국 일반고 롱테일</b>이
+        오히려 우리의 무경쟁 시장입니다.
+      </div>
     </div>
   </Slide>
 
   {/* 10 ─────────────────────────────────────────────── */}
-  <Slide id="s10" title="GTM">
-    <div class="kicker">09<span class="sep">/</span>GTM</div>
-    <h2 class="h2">1등급 18명 중 절반만 열고, 선착순으로 닫습니다</h2>
-    <p class="sub">
-      정원이 작아야 품질이 유지되고, 희소성이 생기고, <b>적자 학교가 0곳</b>이 됩니다.
-    </p>
+  <Slide id="s10" title="해자 · Ask">
+    <div class="kicker">09<span class="sep">/</span>해자 · Ask</div>
+    <h2 class="h2">강사가 떠나면 사라지는 학원의 노하우와 달리, 쌓이는 '학교별 출제 프로필'은 영구적 해자가 됩니다</h2>
 
-    <div class="cols" style="margin-top:20px">
+    <div class="cols" style="margin-top:22px">
       <div class="c">
-        <div class="ck">정원 설계</div>
-        <div class="ch">Top 5% = 8~10명</div>
-        <div class="cd">5등급제 1등급(18명) 중 <b>최상위 절반</b>을 얼리어답터 정원으로. D-35 오픈, 도달 시 마감·대기열</div>
+        <div class="ck">Asset</div><div class="ch">School Exam DNA</div>
+        <div class="cd">핵심 자산은 개별 문항이 아니라, 학기가 거듭될수록 업로드와 적중 피드백이 누적되어 정교해지는 <b>전국 고등학교별 출제 프로필</b>입니다.</div>
       </div>
       <div class="c">
-        <div class="ck">왜 1등급인가</div>
-        <div class="ch">레퍼런스 · 상한 통제</div>
-        <div class="cd">① 학교 안 영향력이 가장 큰 집단 ② CS·검수 물량 상한 통제 ③ <b>정원의 절반만 결제해도 BEP</b></div>
+        <div class="ck">Effect</div><div class="ch">데이터 네트워크 효과</div>
+        <div class="cd">한 학교에 먼저 침투해 <b>2~3번의 시험 사이클</b>을 돌면, 후발주자나 로컬 학원이 따라잡을 수 없는 예측 정확도 격차가 완성됩니다.</div>
       </div>
       <div class="c">
-        <div class="ck">궤도 후</div>
-        <div class="ch">정원 해제 → 전체 오픈</div>
-        <div class="cd">재결제율 60% 확인 학교부터 정원 해제. 확장은 <b>검증된 학교에서만</b></div>
+        <div class="ck">Defense</div><div class="ch">인적 자원 비종속</div>
+        <div class="cd">강사 이탈·학원 폐업으로 자산이 사라지지 않습니다. <b>시스템에 남습니다.</b></div>
       </div>
     </div>
 
-    <div class="rowhead"><span class="n">LOOP</span><h3>기출을 먼저 모으고, 친구가 정원을 채웁니다</h3><span class="meta">기출 수급 → Crowd-unlock</span></div>
+    <div class="rowhead"><span class="n">COMPOUND</span><h3>학기가 지날수록 두꺼워지는 프로필</h3><span class="meta">1-1 중간 → 2-1 중간</span></div>
     <div class="rows">
       <div class="row">
-        <div class="k">Step 0 · D-45</div>
-        <div class="v"><b>기출 제보자 1인</b>에게 패스 50% 할인권 → 시험지 확보. 제보자가 사실상 영업사원이 됩니다</div>
+        <div class="k">1-1 중간</div>
+        <div class="v">첫 업로드 · 프로필 <b>1레이어</b> — 리포트는 "범위와 빈도"까지만 말합니다</div>
       </div>
       <div class="row">
-        <div class="k">Step 1 · D-35</div>
-        <div class="v"><b>역추적 리포트 무료 공개</b> → "우리 학교 이렇게 나온대"가 카톡방에서 돌게 만듭니다</div>
+        <div class="k">1-1 기말</div>
+        <div class="v">적중 피드백 1회 · <b>변형 레시피</b>가 붙습니다</div>
       </div>
       <div class="row">
-        <div class="k">Step 2 · 개설</div>
-        <div class="v">친구 <b>4명 초대 시 개설 확정</b>. 5명 달성 시 전원 단가 할인 + 파이널 모의 해금 (crowd-unlock)</div>
-      </div>
-    </div>
-    <p class="foot-note">정원 미달 시 자동 환불. 미달 학교의 손실은 다음 장의 블렌디드 손익으로 관리합니다.</p>
-  </Slide>
-
-  {/* 11 ─────────────────────────────────────────────── */}
-  <Slide id="s11" title="단위 경제성">
-    <div class="kicker">10<span class="sep">/</span>비즈니스 모델</div>
-    <h2 class="h2">개설 성공 학교 1곳이, 폐강 1.5곳을 먹여 살립니다</h2>
-
-    <div class="rowhead"><span class="n">UNIT</span><h3>학교 한 곳의 학기 손익 — 3개 시나리오</h3><span class="meta">단위: 만 원 · 예시 가정</span></div>
-    <table class="tbl">
-      <thead>
-        <tr><th>항목</th><th class="num">5명 (BEP)</th><th class="num">10명 (기본)</th><th class="num">20명 (성숙)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>매출</td><td class="num">75</td><td class="num">150</td><td class="num">300</td></tr>
-        <tr><td>콘텐츠 원가</td><td class="num">−21</td><td class="num">−21</td><td class="num">−21</td></tr>
-        <tr><td>업로드 분석</td><td class="num">−5</td><td class="num">−5</td><td class="num">−5</td></tr>
-        <tr><td>운영 · CS</td><td class="num">−30</td><td class="num">−30</td><td class="num">−36</td></tr>
-        <tr><td>채널 · CAC</td><td class="num">−15</td><td class="num">−30</td><td class="num">−60</td></tr>
-        <tr class="total"><td>공헌이익</td><td class="num">4 (5%)</td><td class="num pos">64 (43%)</td><td class="num pos">178 (59%)</td></tr>
-      </tbody>
-    </table>
-
-    <div class="stmt" style="margin-top:20px">
-      <div class="tag">Blended — 폐강을 넣어도 남는가</div>
-      <div class="big">폐강 <span class="ph">60%</span>를 가정해도 포트폴리오는 흑자입니다.</div>
-      <p>
-        폐강 학교 1곳의 매몰비용은 사전 분석 <b>5만</b> + 마케팅 <b>3만</b> = <b>약 8만 원</b>.
-        개설 학교 1곳(10명 기준 공헌이익 64만)이 <b>폐강 1.5곳분(약 12만)을 흡수</b>하고도 남습니다.
-        즉 <b>개설 4곳 중 1곳만 성공해도 손익분기</b>입니다.
-      </p>
-    </div>
-    <p class="foot-note">민감도 — 객단가 −20% 시 BEP 5 → 6.3명. 폐강률 70%·개설 성공률 30%에서도 포트폴리오 공헌이익은 플러스.</p>
-  </Slide>
-
-  {/* 12 ─────────────────────────────────────────────── */}
-  <Slide id="s12" title="해자">
-    <div class="kicker">11<span class="sep">/</span>해자</div>
-    <h2 class="h2">직판과 학원 공급은 문항 풀부터 분리합니다</h2>
-    <p class="sub">
-      비학군지는 학원 통학권이 좁습니다. 같은 문항을 학원에 뿌리면 <b>1등급 정원의 희소성</b>이 그 자리에서 깨집니다.
-    </p>
-
-    <div class="rows" style="margin-top:16px">
-      <div class="row">
-        <div class="k">B2C (직판)</div>
-        <div class="v">미개설·개설 학교 모두 <b>우리 직판만</b>. 시크릿 문항 풀(학교별 최신 레시피 반영) 사용</div>
+        <div class="k">1-2 중간</div>
+        <div class="v">2사이클 누적 · <b>교사 코호트 성향</b>까지 반영</div>
       </div>
       <div class="row">
-        <div class="k">B2B (학원 공급)</div>
-        <div class="v"><b>B2C 미개설 학교에만</b> 공급. 라이선스 문항 풀(레시피 미적용, 범용 변형)로 의도적 격차. 학교 단위 독점 계약</div>
-      </div>
-      <div class="row">
-        <div class="k">가격 정책</div>
-        <div class="v">학원 공급가 = B2C 객단가의 <span class="ph">__%</span> + 학교당 최소 보장 <span class="ph">__만</span>. B2C와 직접 가격 경쟁이 성립하지 않게 설계</div>
+        <div class="k">2-1 중간</div>
+        <div class="v">후발주자가 같은 지점에 서려면 <b>같은 시간이 다시 필요</b>합니다</div>
       </div>
     </div>
 
-    <div class="cols" style="margin-top:18px">
-      <div class="c">
-        <div class="ck">Data</div><div class="ch">출처 역추적 이력</div>
-        <div class="cd">학교·교사 코호트별 변형 파라미터. 쓸수록 정확해지고, 후발주자는 같은 학교를 처음부터 시작합니다.</div>
-      </div>
-      <div class="c">
-        <div class="ck">Review</div><div class="ch">검수 기준 · 인력</div>
-        <div class="cd">통과 기준과 탈락률 관리. 생성은 누구나 하지만 파이프라인은 시간이 걸립니다.</div>
-      </div>
-      <div class="c">
-        <div class="ck">Contract</div><div class="ch">비독점 라이선스 · 제휴</div>
-        <div class="cd">대성 문항 풀, 출판사 허락, 지역 학원 제휴. 복제에 시간이 걸리는 자산입니다.</div>
-      </div>
-    </div>
-  </Slide>
-
-  {/* 13 ─────────────────────────────────────────────── */}
-  <Slide id="s13" title="실행">
-    <div class="kicker">12<span class="sep">/</span>실행</div>
-    <h2 class="h2">3개월 안에 "5명이 모이는가"를 검증합니다</h2>
-
-    <div class="rows" style="margin-top:14px">
-      <div class="row">
-        <div class="k">0~1개월</div>
-        <div class="v"><b>커버리지 20개 학교</b> — 고1 수학 1개 학기. 프로토타입 5화면 + 백테스팅 <span class="ph">3곳</span></div>
-      </div>
-      <div class="row">
-        <div class="k">1~2개월</div>
-        <div class="v"><b>파일럿 3개 학교</b> — 1등급 인원 정원으로 선착순 개설, 실제 시험 범위로 세트 제공</div>
-      </div>
-      <div class="row">
-        <div class="k">2~3개월</div>
-        <div class="v"><b>적중 리포트 회수</b> — 실제 출제와 대조. 재결제율이 기준을 넘으면 정원 해제</div>
+    <div class="point">
+      <span class="tag">The Ask</span>
+      <div class="b">
+        <b>시드 라운드 <span class="ph">금액</span></b> — 거점 학교 출제 프로필 선점 + AI 분석·생성 파이프라인 고도화.
+        마일스톤: 3개월 내 <span class="ph">파일럿 N개교</span>에서 <b>5인 개설 성공률 40%</b>, 재결제율 60%.
       </div>
     </div>
 
-    <div class="cols" style="margin-top:16px">
-      <div class="c">
-        <div class="ck">KPI 1</div><div class="ch">5인 개설 성공률 ≥ 40%</div>
-        <div class="cd">미달 시 채널·가격 재설계</div>
-      </div>
-      <div class="c">
-        <div class="ck">KPI 2</div><div class="ch">검수 탈락률 ≤ 10%</div>
-        <div class="cd">초과 시 생성 비중 축소</div>
-      </div>
-      <div class="c">
-        <div class="ck">KPI 3</div><div class="ch">재결제율 ≥ 60%</div>
-        <div class="cd">미달 시 세트 구성 재설계</div>
-      </div>
-    </div>
-
-    <div class="ph-block">
-      <span class="tag-i">채워넣기 — Team &amp; Unfair Advantage</span>
-      <b>문항 설계·검수 역량 <span class="ph">누가 · 경력</span></b> ·
-      <b>업계 네트워크 <span class="ph">대성·출판사·강사 풀</span></b> ·
-      <b>엔진 역량 <span class="ph">역추적·수식 렌더링 엔지니어</span></b>
-    </div>
-
-    <p class="signoff">
-      남들과 같은 문제집은 그만, <span>우리 학교에 나올 문제</span>를 풀자.
-    </p>
+    <p class="signoff">남들과 같은 문제집은 그만, <span>우리 학교 시험에 나올 문제</span>만 풀자</p>
     <p class="foot-note">TEAM 2387 · 2026.11.20</p>
   </Slide>
 </Deck>
