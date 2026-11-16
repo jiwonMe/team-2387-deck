@@ -544,6 +544,29 @@
     background: var(--accent);
   }
 
+  /* ── KaTeX ───────────────────────────────────────────── */
+  .tex-d {
+    display: block;
+    margin: 8px 0;
+    font-size: 13px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-align: center;
+  }
+  .tex-d .katex-display {
+    margin: 0;
+  }
+  .mock .tex-d {
+    font-size: 10px;
+    margin: 6px 0;
+  }
+  .tex-i {
+    font-size: 0.98em;
+  }
+  .tex-i .katex {
+    font-size: 1em;
+  }
+
   /* ── 한국어 개행 (단어 중간에서 끊기지 않게) ─────────── */
   .h1,
   .h2 {

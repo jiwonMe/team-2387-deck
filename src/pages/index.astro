@@ -1,6 +1,7 @@
 ---
 import Deck from '../layouts/Deck.astro';
 import Slide from '../components/Slide.astro';
+import Tex from '../components/Tex.astro';
 import RevenueChart from '../components/RevenueChart.tsx';
 import LeverageChart from '../components/LeverageChart.tsx';
 
@@ -213,8 +214,11 @@ const TOTAL = 11;
         <div class="mock-h"><b>업로드</b> 화성고 기출 8번</div>
         <div class="mock-b">
           <span class="qtag">1학기 기출 · 22문항 가운데 8번</span>
-          <div class="mt-3 text-[12px] leading-[1.8] text-fg2">
-            x³ − (a²+a−1)x² − a(a−3)x + 4a = 0 이 서로 다른 세 실근을 가질 때, αγ = −4 가 되도록 하는 a의 값은?
+          <div class="mt-1">
+            <Tex display tex="x^3-(a^2+a-1)x^2-a(a-3)x+4a=0" />
+            <div class="text-[11.5px] leading-[1.75] text-fg2">
+              이 서로 다른 세 실근을 가질 때, <Tex tex="\alpha\gamma=-4" /> 가 되도록 하는 <Tex tex="a" /> 의 값은?
+            </div>
           </div>
           <div class="mt-3 font-mono text-[10px] text-fg3">업로드 후 8초</div>
         </div>
@@ -301,17 +305,27 @@ const TOTAL = 11;
             <span class="qtag">Layer 0 → 4</span>
           </div>
 
-          <div class="mt-3.5">
+          <div class="mt-3 rounded-[6px] border border-line2 bg-fill px-2 pb-1">
+            <div class="font-mono text-[8.5px] uppercase tracking-[0.12em] text-fg3 pt-2">원전 69쪽 18번</div>
+            <Tex display tex="x^3-(a^2-5a-5)x^2+(a^2-6a-4)x+b=0" />
+            <div class="font-mono text-[8.5px] uppercase tracking-[0.12em] text-accent">변형 · 화성고 8번</div>
+            <Tex display tex="x^3-(a^2+a-1)x^2-a(a-3)x+4a=0" />
+            <div class="text-center font-mono text-[10px] text-accent pb-1">
+              ⇒ <Tex tex="\alpha\gamma=-4" />
+            </div>
+          </div>
+
+          <div class="mt-3">
             <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-accent mb-1.5">Step 1 · 조건 지우기</div>
             <div class="text-[11.5px] leading-[1.7] text-fg2">
-              조건 (가)인 "세 실근 가운데 하나는 1"을 발문에서 지웠습니다. 대신 서술형 01번의 상황 벡터를 4a로 옮겨, 학생이 x = −1을 직접 대입해 찾게 만들었습니다.
+              조건 (가)를 발문에서 지웠습니다. 대신 서술형 01번의 상황 벡터를 4a로 옮겨 x = −1을 직접 찾게 했습니다.
             </div>
           </div>
 
           <div class="mt-3">
             <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-accent mb-1.5">Step 2 · 발문 치환</div>
             <div class="text-[11.5px] leading-[1.7] text-fg2">
-              조건 (나)를 근과 계수 관계 <b style="color:var(--fg)">αγ = −4</b>로 바꿨습니다. 근의 곱 조건이 두 갈래로 갈라지면서 가지치기가 뒤로 밀립니다.
+              조건 (나)를 근과 계수 관계 <b style="color:var(--fg)"><Tex tex="\alpha\gamma=-4" /></b>로 바꿨습니다. 근의 곱 조건이 두 갈래로 갈라지면서 가지치기가 뒤로 밀립니다.
             </div>
           </div>
 
