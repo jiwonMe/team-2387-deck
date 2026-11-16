@@ -4,6 +4,7 @@ import Slide from '../components/Slide.astro';
 import Tex from '../components/Tex.astro';
 import RevenueChart from '../components/RevenueChart.tsx';
 import LeverageChart from '../components/LeverageChart.tsx';
+import { machines } from '../lib/anatomy/geometry';
 
 const TOTAL = 11;
 ---
@@ -17,6 +18,9 @@ const TOTAL = 11;
       골라주는 <span class="accent">내신 적중 큐레이션</span>
     </h1>
     <p class="tagline">원생 1명인 학교도 완벽하게 대비하는 다학교 로컬 학원 전용 큐레이션 SaaS와 북스토어</p>
+    <div class="mobile-classroom iso" data-theme="light" aria-hidden="true">
+      <Fragment set:html={machines[7]} />
+    </div>
     <p class="lead">
       강사가 밤새 문제를 뒤져야 하는 <b>50만 문항 검색형 문제은행</b>에서, 학교별로 시험에 나올 문제만 즉시
       추려 받는 <b>내신 적중 큐레이션</b>으로 옮깁니다.

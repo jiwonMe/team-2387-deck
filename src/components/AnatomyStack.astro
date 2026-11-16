@@ -1,0 +1,71 @@
+---
+import { machines, axes } from '../lib/anatomy/geometry';
+import '../vendor/anatomy/iso.css';
+import '../styles/anatomy.css';
+---
+
+<div class="anatomy-stack iso" id="anatomy" data-active="1" data-machine="7" data-theme="light" data-axes={JSON.stringify(axes)} aria-hidden="true">
+  <div class="anatomy-stage">
+    {machines.map((art, i) => <div class="anatomy-machine" data-machine-id={i}><Fragment set:html={art} /></div>)}
+  </div>
+</div>
+
+<script>
+  import { scenes } from '../lib/anatomy/states';
+  const root = document.getElementById('anatomy')!;
+  const axes = JSON.parse(root.dataset.axes!) as Record<string, [number, number]>;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const desktop = matchMedia('(min-width: 1181px)');
+  const nodes = Array.from(root.querySelectorAll<SVGGElement>('[data-axis]'));
+  const values = nodes.map(() => 0);
+  let targets = values.slice();
+  let frame = 0, last = 0, visible = true, scene = 0;
+  const move = (node: SVGGElement, value: number) => {
+    const [x,y] = axes[node.dataset.axis!];
+    node.setAttribute('transform', `translate(${(x*value).toFixed(3)} ${(y*value).toFixed(3)})`);
+  };
+  function aim() {
+    const s = scenes[scene];
+    targets = nodes.map(n => {
+      if (Number(n.closest<HTMLElement>('[data-machine-id]')!.dataset.machineId) !== s.machine) return 0;
+      if (n.hasAttribute('data-drawer')) return Number(n.dataset.drawer) === s.drawer ? 27 : 0;
+      if (n.hasAttribute('data-head')) return s.head;
+      if (n.hasAttribute('data-platen')) return s.press;
+      return s.output;
+    });
+  }
+  function tick(now: number) {
+    frame = 0;
+    if (!visible || !desktop.matches || document.hidden) return;
+    const dt = last ? Math.min((now-last)/1000,1/30) : 1/60;
+    last = now;
+    let moving = false;
+    nodes.forEach((node,i) => {
+      values[i] = reduce.matches ? targets[i] : values[i]+(targets[i]-values[i])*(1-Math.exp(-dt/.22));
+      if (Math.abs(targets[i]-values[i]) < .015) values[i] = targets[i];
+      else moving = true;
+      move(node,values[i]);
+    });
+    if (!reduce.matches && moving) frame=requestAnimationFrame(tick);
+  }
+  function run() {
+    if (!frame && visible && desktop.matches && !document.hidden) { last=0; frame=requestAnimationFrame(tick); }
+  }
+  function sync() {
+    scene=Math.max(0,Math.min(scenes.length-1,Number(root.dataset.active || 1)-1));
+    root.dataset.machine=String(scenes[scene].machine);
+    aim(); run();
+  }
+  new MutationObserver(sync).observe(root,{attributes:true,attributeFilter:['data-active']});
+  const theme=()=>{
+    const value=document.documentElement.dataset.theme || 'light';
+    root.dataset.theme=value;
+    document.querySelectorAll<HTMLElement>('.mobile-classroom').forEach(el=>{el.dataset.theme=value;});
+  };
+  new MutationObserver(theme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+  new IntersectionObserver(entries=>{visible=entries[entries.length-1].isIntersecting; if(visible)run();}).observe(root);
+  reduce.addEventListener('change',()=>{aim();run();});
+  desktop.addEventListener('change',run);
+  document.addEventListener('visibilitychange',run);
+  theme();sync();
+</script>

@@ -821,40 +821,10 @@
     font-family: var(--font-sans);
   }
 
-  /* ── anatomy (좌측 배경 장식) ──────────────────────────── */
-  .anatomy {
-    position: fixed;
-    left: -3vw;
-    bottom: -4vh;
-    z-index: 0;
-    width: calc(var(--rail) * 1.36);
-    max-width: 54vw;
-    margin: 0;
-    pointer-events: none;
-    user-select: none;
-    color: var(--fg2);
-    opacity: 0.72;
-    -webkit-mask-image: linear-gradient(112deg, #000 58%, transparent 92%);
-    mask-image: linear-gradient(112deg, #000 58%, transparent 92%);
-  }
-  .anatomy svg {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+  /* Anatomy geometry, theme and motion styles live in anatomy.css. */
   #deck {
     position: relative;
     z-index: 1;
-  }
-  @media (max-width: 1180px) {
-    .anatomy {
-      display: none;
-    }
-  }
-  @media print {
-    .anatomy {
-      display: none;
-    }
   }
 
   /* ── overview ───────────────────────────────────────────── */

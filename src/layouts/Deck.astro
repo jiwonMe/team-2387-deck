@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
 import 'katex/dist/katex.min.css';
-import AnatomyFigure from '../components/AnatomyFigure.astro';
+import AnatomyStack from '../components/AnatomyStack.astro';
+import '../styles/mobile.css';
 
 interface Props {
   title: string;
@@ -18,7 +19,7 @@ const totalLabel = String(total).padStart(2, '0');
 <html lang="ko" data-theme="light">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
     <meta name="description" content="1등급 내신 대비의 전략적 표준. 남들과 같은 문제집은 그만, 우리 학교 시험에 나올 문제만. AI 학교별 내신 타겟팅 플랫폼" />
     <meta name="theme-color" content="#0b0b0a" />
@@ -36,7 +37,7 @@ const totalLabel = String(total).padStart(2, '0');
   </head>
 
   <body>
-    <AnatomyFigure />
+    <AnatomyStack />
 
     <main id="deck">
       <slot />
@@ -107,11 +108,29 @@ const totalLabel = String(total).padStart(2, '0');
           requestAnimationFrame(() => {
             idx = activeIndex();
             paint();
+            syncAnatomy();
             ticking = false;
           });
         },
         { passive: true }
       );
+
+      window.addEventListener('resize', () => {
+        idx = activeIndex();
+        syncAnatomy();
+      });
+      window.addEventListener('pageshow', () => {
+        idx = activeIndex();
+        syncAnatomy();
+      });
+
+      // 도해 전환
+      const anatomy = document.getElementById('anatomy');
+      function syncAnatomy() {
+        if (!anatomy) return;
+        const next = String(idx + 1);
+        if (anatomy.dataset.active !== next) anatomy.dataset.active = next;
+      }
 
       // ── 스크롤 구간: 화살표를 단계 이동으로 ────────────────
       const scrolly = document.querySelector<HTMLElement>('.slide.scrolly');
@@ -240,6 +259,7 @@ const totalLabel = String(total).padStart(2, '0');
         }
       }
       paint();
+      syncAnatomy();
     </script>
   </body>
 </html>
