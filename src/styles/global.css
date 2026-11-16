@@ -544,6 +544,23 @@
     background: var(--accent);
   }
 
+  /* ── 한국어 개행 (단어 중간에서 끊기지 않게) ─────────── */
+  .h1,
+  .h2 {
+    word-break: keep-all;
+    text-wrap: balance;
+  }
+  .lead,
+  .sub,
+  .cd,
+  .v,
+  .l,
+  .card2,
+  .point .b {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
   /* ── 투자자 포인트 ────────────────────────────────────── */
   .point {
     margin-top: 20px;
