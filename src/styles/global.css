@@ -211,6 +211,10 @@
     border-bottom: 1px solid var(--line2);
     align-items: baseline;
   }
+  .mock .row {
+    grid-template-columns: 112px 1fr;
+    gap: 12px;
+  }
   .row:last-child {
     border-bottom: 0;
   }

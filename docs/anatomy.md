@@ -7,13 +7,13 @@ Uses the MIT-licensed `wheresryan22/anatomy` SVG kit, vendored in `src/vendor/an
 | Slides | Object | Moving part |
 | --- | --- | --- |
 | 1 | Classroom with problem board and four student desks | Selected orange worksheet advances on the desk |
-| 3, 10 | Binding press | Guided platen moves down toward the document set |
-| 2, 4 | School document cabinet | Selected drawer slides forward |
-| 5, 6 | Two-page comparison scanner | Head travels between source and transformed question |
-| 7 | Bookcase | One supplementary textbook slides out |
-| 8 | Cash register | Four-compartment cash drawer opens |
-| 9 | Sample printer | Printed sheet advances onto output tray |
-| 11 | Document vault | Guided door reveals accumulated records |
+| 2, 3, 5 | School document cabinet | Selected drawer slides forward per context |
+| 4, 12 | Binding press | Guided platen moves down toward the document set |
+| 6, 7 | Two-page comparison scanner | Head travels between source and transformed question |
+| 8, 10 | Cash register | Four-compartment cash drawer opens (payer check / full ARPU) |
+| 9 | Bookcase | One supplementary textbook slides out |
+| 11 | Sample printer | Printed sheet advances onto output tray |
+| 13 | Document vault | Guided door reveals accumulated records |
 
 These are conceptual explanations, not measurements or simulations of real production equipment.
 
@@ -31,4 +31,4 @@ Shared base: four feet and pads, beveled plinth, perimeter groove, fasteners and
 
 ## Checks performed
 
-Production build, all 11 scroll states (exactly one settled visible machine), no visible illustration text, mobile horizontal overflow, light/dark rendering. Anatomy line-end checks returned zero floating ends for the scanner, bookcase, cash register, printer and vault. These checks do not constitute a complete 3D collision/depth audit.
+Production build, all 13 scroll states (exactly one settled visible machine), no visible illustration text, mobile horizontal overflow, light/dark rendering. Anatomy line-end checks returned zero floating ends for the scanner, bookcase, cash register, printer and vault. These checks do not constitute a complete 3D collision/depth audit.

@@ -6,7 +6,7 @@ import RevenueChart from '../components/RevenueChart.tsx';
 import LeverageChart from '../components/LeverageChart.tsx';
 import { machines } from '../lib/anatomy/geometry';
 
-const TOTAL = 11;
+const TOTAL = 13;
 ---
 
 <Deck title="TEAM 2387 · 내신 적중 큐레이션" total={TOTAL}>
@@ -22,33 +22,32 @@ const TOTAL = 11;
       <Fragment set:html={machines[7]} />
     </div>
     <p class="lead">
-      강사가 밤새 문제를 뒤져야 하는 <b>50만 문항 검색형 문제은행</b>에서, 학교별로 시험에 나올 문제만 즉시
-      추려 받는 <b>내신 적중 큐레이션</b>으로 옮깁니다.
+      강사가 밤새 문제를 뒤져야 하는 <b>검색형 문제은행</b>에서, 학교 프린트와 부교재의 원전 결합 구조를 역추적해
+      출제 유력 문항만 추려 받는 <b>내신 적중 큐레이션</b>으로 옮깁니다.
     </p>
 
     <div class="band b3" style="margin-top:20px">
       <div class="cell">
         <div class="ck">과거</div>
         <div class="ch">검색형 문제은행</div>
-        <div class="cd">수백 개 필터와 검색창 앞에서 강사가 밤을 새웁니다</div>
+        <div class="cd">수백 개 필터와 검색창 앞에서 강사가 학교마다 직접 대조합니다</div>
       </div>
       <div class="cell engine">
         <div class="ck">현재</div>
-        <div class="ch">적중 큐레이션</div>
-        <div class="cd">담당 학교를 등록하면 출제 유력 문항 카드가 바로 출력됩니다</div>
+        <div class="ch">출처 계보 큐레이션</div>
+        <div class="cd">부교재와 프린트의 복수 원전 결합을 분석해 학교별 예상 세트를 뽑습니다</div>
       </div>
       <div class="cell out">
         <div class="ck">결과</div>
         <div class="ch">원생 1명 학교도 커버</div>
-        <div class="cd">다학교 소수 원생 학원이 맞춤 자료를 갖게 됩니다</div>
+        <div class="cd">다학교 소수 원생 학원이 조교 인건비 없이 맞춤 자료를 확보합니다</div>
       </div>
     </div>
 
     <div class="point">
       <span class="tag">Investor point</span>
       <div class="b">
-        AI 문제 생성 툴이 아닙니다. 로컬 학원의 <b>가장 아픈 노동 병목</b>을 없애는
-        <b>B2B 큐레이션 워크플로 플랫폼</b>입니다.
+        단순 AI 문항 생성 툴이 아닙니다. 로컬 중소 학원의 <b>다학교 자료 제작 병목</b>을 줄이는 <b>B2B 큐레이션 워크플로 플랫폼</b>입니다.
       </div>
     </div>
   </Slide>
@@ -62,33 +61,33 @@ const TOTAL = 11;
       <div class="rows" style="margin:0">
         <div class="row">
           <div class="k">현장 구조</div>
-          <div class="v">학원 하나에 <b>5~10개 고등학교</b> 학생이 학교당 <b>1~10명</b>씩 나뉘어 등원합니다</div>
+          <div class="v">총원 60명급 로컬 수학 학원에 인근 <b>5~8개 일반고</b> 원생 약 35명이 학교당 <b>1~10명</b>씩 나뉘어 등원합니다</div>
         </div>
         <div class="row">
           <div class="k">물리적 한계</div>
-          <div class="v">원생 20명 이상인 주력 학교와 달리, 1~3명짜리 학교는 부교재와 프린트 출처를 강사가 직접 분석해야 합니다. 인건비와 시간이 맞지 않습니다</div>
+          <div class="v">원생 20명 이상인 주력 학교와 달리, 1~3명짜리 학교는 부교재와 프린트 출처를 강사가 직접 대조해야 해 인건비와 시간이 맞지 않습니다</div>
         </div>
         <div class="row">
           <div class="k">기존 문제은행</div>
-          <div class="v">문제를 쌓아둔 창고일 뿐, 학교 프린트와 맞춰 <b>나올 문제를 골라내는 일</b>은 강사에게 남습니다</div>
+          <div class="v">단원·유형별 유사문제는 주지만, 학교 프린트가 <b>어느 원전 문항을 합쳐 변형했는지</b> 골라내는 일은 강사에게 남습니다</div>
         </div>
         <div class="row">
           <div class="k">결과</div>
-          <div class="v">소수 인원 학교 학생이 <b>자료가 없다는 이유로 이탈</b>합니다. 학원은 그 학교 매출을 통째로 잃습니다</div>
+          <div class="v">일반고 참여 학생 1인당 수학 사교육비는 <b>월 39.3만 원</b>(2025 공식 조사)입니다. 자료 부족으로 원생 1명만 이탈해도 타격이 큽니다</div>
         </div>
       </div>
 
       <div class="mock">
-        <div class="mock-h"><b>한 강사의 담당 학교</b> 이번 학기</div>
+        <div class="mock-h"><b>강사 한 명의 담당 학교</b> 이번 학기 예시</div>
         <div class="mock-b">
           <ol class="rank">
             <li>
               <span class="rk">01</span><span class="t">A고 · 원생 2명</span><span class="p">2</span>
-              <span class="why">부교재와 프린트를 따로 분석해야 함</span>
+              <span class="why">부교재와 프린트를 따로 대조해야 함</span>
             </li>
             <li>
               <span class="rk">02</span><span class="t">B고 · 원생 1명</span><span class="p">1</span>
-              <span class="why">자료 제작 비용이 수강료를 넘습니다</span>
+              <span class="why">전담 제작 인건비가 수강료를 넘습니다</span>
             </li>
             <li>
               <span class="rk">03</span><span class="t">C고 · 원생 5명</span><span class="p">5</span>
@@ -99,7 +98,7 @@ const TOTAL = 11;
               <span class="why">프린트 배포 시점마다 대응이 밀립니다</span>
             </li>
           </ol>
-          <div class="drop">주력 학교는 원생 20명 이상이라 전담 대비가 가능합니다. 나머지 학교가 문제입니다.</div>
+          <div class="drop">주력 학교는 원생 20명 이상이라 전담 대비가 가능합니다. 나머지 소수 학교가 문제입니다.</div>
         </div>
       </div>
     </div>
@@ -107,27 +106,98 @@ const TOTAL = 11;
     <div class="point">
       <span class="tag">Investor point</span>
       <div class="b">
-        전국 수만 개 중소 학원이 매 학기 겪는 <b>다학교 소수 원생 커버리지 병목</b>입니다.
-        기존 문제은행 SaaS는 이 지점을 건드리지 않았습니다.
+        전국 교과 학원 86,695곳 가운데 입시·보습 중소 학원이 매 학기 겪는 <b>다학교 소수 원생 커버리지 병목</b>입니다.
+        기존 문제은행 SaaS는 다학교 출처 대조 수작업을 해결하지 못했습니다.
       </div>
     </div>
   </Slide>
 
-  {/* 03 ─────────────────────────────────────────────── */}
-  <Slide id="s3" title="가치 제안">
-    <div class="kicker">02<span class="sep">/</span>가치 제안</div>
+  {/* 03 ── 시장 규모 (2026 교육기본통계·2025 사교육비·학원등록 실측 반영) ─ */}
+  <Slide id="s3" title="시장 규모">
+    <div class="kicker">02<span class="sep">/</span>시장 규모</div>
+    <h2 class="h2">2026 교육통계와 학원 등록 실측치를 반영한 핵심 시장은<br />SAM 약 2,530곳, 기준 SOM 연 9.0억 원입니다</h2>
+
+    <div class="band b3" style="margin-top:18px">
+      <div class="cell">
+        <div class="ck">TAM · 고등 수학 수요 시설</div>
+        <div class="ch">약 6,750곳 · 연 243억 원</div>
+        <div class="cd">일반고 고1·2 수학 학원 수요(약 23.6만 명)를 학원당 원생 35명으로 환산한 규모입니다(매쓰플랫 전체 9,500곳과 정합)</div>
+      </div>
+      <div class="cell engine">
+        <div class="ck">SAM · 로컬 다학교 학원</div>
+        <div class="ch">약 2,530곳 · 연 91.0억 원</div>
+        <div class="cd">교육부 등록 통계 기준 교습소(33.1%)와 대형·프랜차이즈(20%)를 빼고 다학교 특강 운영 학원(70%)만 남겼습니다</div>
+      </div>
+      <div class="cell out">
+        <div class="ck">기준 SOM · 3년차 10%</div>
+        <div class="ch">250곳 · 연 9.0억 원</div>
+        <div class="cd">핵심 SaaS만 계산하면 연 8.1억 원입니다. 500곳(18.0억 원)은 과목·채널 확장을 전제한 공격적 목표로 분리합니다</div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-[1.04fr_0.96fr]" style="margin-top:14px">
+      <div class="mock">
+        <div class="mock-h"><b>산정 근거</b> 공식 통계 실측치와 내부 가정 구분</div>
+        <div class="mock-b" style="padding:10px 14px">
+          <div class="rows" style="margin:0">
+            <div class="row" style="padding:9px 0">
+              <div class="k">2026 교육기본통계</div>
+              <div class="v">일반고 <b>1,594개교 · 95.2만 명</b> 중 고1·2 약 63.4만 명, 교과 학원 비중 <b>66.9%</b>(교습소 33.1% 실측 제외)</div>
+            </div>
+            <div class="row" style="padding:9px 0">
+              <div class="k">2025 사교육비 조사</div>
+              <div class="v">일반고 수학 참여율 <b>47.8%</b>, 일반고 일반교과 대비 학원수강 지출 비중 <b>77.9%</b>(36.7÷47.1만 원)</div>
+            </div>
+            <div class="row" style="padding:9px 0">
+              <div class="k">내부 가정 · 검증</div>
+              <div class="v">학원당 고1·2 수학 35명, 중소형 80%, 다학교 특강 70%, 기준 ARPU 연 360만 원(NEIS 등록자료로 교차검증)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock">
+        <div class="mock-h"><b>단계별 목표</b> 통합 연 360만 원(핵심 324만 원) 기준</div>
+        <div class="mock-b" style="padding:10px 14px">
+          <table class="tbl" style="margin:0">
+            <thead>
+              <tr><th>단계</th><th class="num" style="text-align:right">유료 학원</th><th class="num" style="text-align:right">SAM 비중</th><th class="num" style="text-align:right">통합(핵심)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>초기 검증 (BEP)</td><td class="num">50곳</td><td class="num">2.0%</td><td class="num">1.8억(1.6억)</td></tr>
+              <tr><td>시장 확장</td><td class="num">120곳</td><td class="num">4.7%</td><td class="num">4.3억(3.9억)</td></tr>
+              <tr class="total"><td>기준 SOM</td><td class="num pos">250곳</td><td class="num pos">9.9%</td><td class="num pos">9.0억(8.1억)</td></tr>
+              <tr><td>공격적 확장</td><td class="num">500곳</td><td class="num">19.8%</td><td class="num">18.0억(16.2억)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="point">
+      <span class="tag">Investor point</span>
+      <div class="b">
+        초기 AI 초안의 부풀린 B2C 시장(3,980억 원)을 폐기하고, <b>2026 교육부 확정 통계와 현실적 학원 요금(월 30만 원)</b>으로 다시 쌓았습니다.
+        영어(일반고 참여율 43.6%)와 국어(29.1%) 확장 시 동일 학원 내 추가 과금이 열립니다.
+      </div>
+    </div>
+  </Slide>
+
+  {/* 04 ─────────────────────────────────────────────── */}
+  <Slide id="s4" title="가치 제안">
+    <div class="kicker">03<span class="sep">/</span>가치 제안</div>
     <h2 class="h2">학원은 소수 원생 학교의 자료 제작에서 해방되고,<br />학생은 우리 학교 시험에 나올 문제만 고밀도로 풉니다</h2>
 
     <div class="band b3" style="margin-top:22px">
       <div class="cell">
         <div class="ck">B2B · 학원</div>
         <div class="ch">자료 제작에서 해방</div>
-        <div class="cd">원생 1~2명 학교도 학교 프린트와 부교재로 선별된 <b>적중 큐레이션 세트</b>를 즉시 확보합니다. 강사가 문제를 찾지 않습니다</div>
+        <div class="cd">원생 1~2명 학교도 학교 프린트와 부교재로 선별된 <b>적중 큐레이션 세트</b>를 확보합니다. 강사가 밤새 원전을 찾지 않습니다</div>
       </div>
       <div class="cell engine">
         <div class="ck">엔진</div>
         <div class="ch">학교별 큐레이션</div>
-        <div class="cd">프린트의 원전을 역추적하고, 그 학교 기출 난이도와 대조해 나올 문항만 남깁니다</div>
+        <div class="cd">프린트의 복수 원전을 역추적하고, 최근 3개년 학교 기출 난이도와 대조해 나올 문항만 남깁니다</div>
       </div>
       <div class="cell out">
         <div class="ck">B2B2C · 학생</div>
@@ -139,38 +209,37 @@ const TOTAL = 11;
     <div class="rows" style="margin-top:14px">
       <div class="row">
         <div class="k">학원이 얻는 것</div>
-        <div class="v">제작 시간 <b>90% 단축</b> · 담당 학교 수 확대 · 소수 원생 학교 <b>퇴원 방어</b></div>
+        <div class="v">출처 대조·문항 선별 수작업 절감 · 담당 학교 수 확대(3개교 → 6개교 이상) · 소수 원생 학교 <b>퇴원 방어</b></div>
       </div>
       <div class="row">
         <div class="k">학생이 얻는 것</div>
-        <div class="v">불필요한 양치기 제거 · 시험 직전 고난도 대비 · 우리 학교 기준의 학습 우선순위</div>
+        <div class="v">불필요한 양치기 제거 · 시험 직전 복합 변형 고난도 대비 · 우리 학교 기준의 학습 우선순위</div>
       </div>
     </div>
 
     <div class="point">
       <span class="tag">Investor point</span>
       <div class="b">
-        학원이 매월 구독료를 내는 이유는 <b>강사 리소스 절감</b>과 <b>소수 학교 원생 유지</b>입니다.
-        그 결과물이 학생에게 그대로 통한다는 점이 구독을 지속시키는 힘입니다.
+        학교 추가 요금(월 3만 원)은 일반고 원생 1명 평균 수학 수강료(월 39.3만 원)의 8% 미만입니다. <b>소수 학교 원생 1명 이탈만 막아도 학원은 구독료를 즉시 회수</b>합니다.
       </div>
     </div>
   </Slide>
 
-  {/* 04 ─────────────────────────────────────────────── */}
-  <Slide id="s4" title="학기 루프">
-    <div class="kicker">03<span class="sep">/</span>고객 관계</div>
+  {/* 05 ─────────────────────────────────────────────── */}
+  <Slide id="s5" title="학기 루프">
+    <div class="kicker">04<span class="sep">/</span>고객 관계</div>
     <h2 class="h2">한 번 내려받고 끝나는 도구가 아니라,<br />학기 초부터 시험 직전까지 학원과 함께 움직입니다</h2>
 
     <div class="band b3" style="margin-top:20px">
       <div class="cell">
         <div class="ck">Step 1 · 학기 초</div>
         <div class="ch">경향 분석과 부교재 세팅</div>
-        <div class="cd">담당 학교를 등록하고 북스토어에서 부교재를 구매하면, 그 학기 학교별 출제 경향 리포트가 열립니다</div>
+        <div class="cd">담당 학교를 등록하고 북스토어에서 부교재를 구매하면, 담당 학기의 학교별 출제 경향 리포트가 열립니다</div>
       </div>
       <div class="cell">
         <div class="ck">Step 2 · 학기 중</div>
         <div class="ch">프린트 출처 해부</div>
-        <div class="cd">학교 유인물이 나올 때마다 학원이 올리면, 문항별 원전 출처와 변형 계보를 즉시 분석합니다</div>
+        <div class="cd">학교 유인물이 나올 때마다 학원이 올리면, 문항별 원전 출처와 변형 계보를 분석합니다</div>
       </div>
       <div class="cell engine">
         <div class="ck">Step 3 · 시험 직전</div>
@@ -183,72 +252,71 @@ const TOTAL = 11;
     <div class="rows">
       <div class="row">
         <div class="k">학기 초</div>
-        <div class="v">학교 등록 · 부교재 구매 · 경향 리포트 확인</div>
+        <div class="v">학교 등록 · 부교재 구매 · 기출 경향 리포트 확인</div>
       </div>
       <div class="row">
         <div class="k">중간고사 3주 전</div>
-        <div class="v">프린트 업로드가 몰립니다. 분석 요청이 가장 많은 시기입니다</div>
+        <div class="v">학교 프린트 업로드가 몰리며 추가 분석 크레딧 수요가 발생합니다</div>
       </div>
       <div class="row">
         <div class="k">시험 직전</div>
-        <div class="v">큐레이션 세트와 최고난도 문항을 배포합니다</div>
+        <div class="v">학교별 예상 30문항 세트와 최고난도 보완 문항을 배포합니다</div>
       </div>
       <div class="row">
-        <div class="k">기말고사</div>
-        <div class="v">같은 학원이 같은 학교로 다시 들어옵니다. 학기 단위로 이어집니다</div>
+        <div class="k">기말고사 · 다음 학기</div>
+        <div class="v">실제 시험지와 예상 세트를 대조해 학교 프로파일을 갱신하고 기말·다음 학기로 이어집니다</div>
       </div>
     </div>
 
     <div class="point">
       <span class="tag">Investor point</span>
       <div class="b">
-        시험 2주만 쓰고 끊는 도구가 아닙니다. 프린트가 나올 때마다 접속하고 학기 내내 유지되는
-        <b>높은 리텐션 구조</b>입니다.
+        시험 2주만 쓰고 끊는 도구가 아닙니다. 프린트가 나올 때마다 접속하고 학기마다 데이터가 쌓이는 <b>높은 리텐션 구조</b>입니다.
       </div>
     </div>
   </Slide>
 
-  {/* 05 ─────────────────────────────────────────────── */}
-  <Slide id="s5" title="큐레이션 엔진">
-    <div class="kicker">04<span class="sep">/</span>핵심 기술</div>
+  {/* 06 ── 큐레이션 엔진 (실측 파이프라인·경쟁사 차별화 반영) ─ */}
+  <Slide id="s6" title="큐레이션 엔진">
+    <div class="kicker">05<span class="sep">/</span>핵심 기술</div>
     <h2 class="h2">키워드로 찾는 검색이 아니라, 업로드 자료와<br />기출의 구조를 비교해 나올 문제만 남깁니다</h2>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-[0.9fr_1.1fr]" style="margin-top:16px">
       <div class="mock">
         <div class="mock-h"><b>업로드</b> 화성고 기출 8번</div>
         <div class="mock-b">
-          <span class="qtag">1학기 기출 · 22문항 가운데 8번</span>
+          <span class="qtag">1학기 기출 · 프로토타입 판독</span>
           <div class="mt-1">
-            <Tex display tex="x^3-(a^2+a-1)x^2-a(a-3)x+4a=0" />
+            <Tex display tex={String.raw`x^3-(a^2+a-1)x^2-a(a-3)x+4a=0`} />
             <div class="text-[11.5px] leading-[1.75] text-fg2">
-              이 서로 다른 세 실근을 가질 때, <Tex tex="\alpha\gamma=-4" /> 가 되도록 하는 <Tex tex="a" /> 의 값은?
+              이 서로 다른 세 실근 <Tex tex={String.raw`\alpha<\beta<\gamma`} /> 를 가질 때, <Tex tex={String.raw`\alpha\gamma=-4`} /> 가 되도록 하는 모든 실수 <Tex tex={String.raw`a`} /> 의 곱은?
             </div>
           </div>
-          <div class="mt-3 font-mono text-[10px] text-fg3">업로드 후 8초</div>
+          <div class="mt-3 font-mono text-[10px] text-fg3">올림포스 336문항 · 기출 117문항 구조화 완료</div>
         </div>
       </div>
 
       <div class="mock">
-        <div class="mock-h"><b>분석 결과</b> 출처 역추적과 큐레이션</div>
+        <div class="mock-h"><b>분석 결과</b> 출처 계보 역추적과 큐레이션</div>
         <div class="mock-b" style="padding:0">
           <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-3">
             <div>
-              <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-fg3 mb-1">원전</div>
-              <div class="text-[11.5px] text-fg2">올림포스 69쪽 18번</div>
+              <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-fg3 mb-1">원전 계보</div>
+              <div class="text-[11.5px] text-fg2">올림포스 69쪽 18번 + 60쪽 서술형 01번</div>
             </div>
-            <span class="qtag">변형</span>
+            <span class="qtag">결합·변형</span>
             <div>
               <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-fg3 mb-1">변형 지점</div>
-              <div class="text-[11.5px] text-fg2">조건 (가) 삭제 · 발문 전환</div>
+              <div class="text-[11.5px] text-fg2">조건 (가) 삭제 · 상수항 치환</div>
             </div>
           </div>
           <div class="border-t border-line2 px-4 py-3">
-            <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-fg3 mb-2">큐레이션 3선 + α</div>
+            <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-fg3 mb-2">큐레이션 세트 · SymPy 정답 검산 통과</div>
             <div class="flex flex-col gap-1.5 text-[11.5px] text-fg2">
-              <div>1. 같은 원전, 계수만 교체</div>
-              <div>2. 근의 부호 조건 추가</div>
-              <div>3. 서술형 2문항으로 확장</div>
-              <div class="text-accent">+α 최고난도 1문항</div>
+              <div>1. 같은 원전 계보, 계수·부호 교체</div>
+              <div>2. 고정근 은닉 + 근의 부호 분기 확장</div>
+              <div>3. 서술형 감점 함정 대비 문항</div>
+              <div class="text-accent">+α 최고난도 복합 변형 (예상 30문항 전수 검산 통과)</div>
             </div>
           </div>
         </div>
@@ -257,196 +325,266 @@ const TOTAL = 11;
 
     <div class="rows" style="margin-top:14px">
       <div class="row">
-        <div class="k">정밀 출처 추적</div>
-        <div class="v">프린트와 부교재 문항이 어느 모의고사와 기출에서 어떻게 변형됐는지 <b>구조 단위로</b> 되짚습니다</div>
+        <div class="k">기존 도구의 한계</div>
+        <div class="v">매쓰플랫 '나의 DB'(시중교재 4,000여 권 연동) 등 기존 서비스도 <b>시험지 업로드·OCR 추출·단원별 쌍둥이 문제</b>는 이미 제공합니다</div>
       </div>
       <div class="row">
-        <div class="k">적중 필터</div>
-        <div class="v">과거 기출 난이도 분포와 대조해 지엽적 문항은 빼고, 시험지에 찍힐 변형문항에 집중합니다</div>
+        <div class="k">출처 계보 역추적</div>
+        <div class="v">단일 문항 쌍둥이 생성을 넘어 <b>복수 원전 결합(COMBINE)과 조건 은닉(HIDE) 구조</b>를 역추적하고 SymPy 코드로 정답을 자동 검증합니다</div>
       </div>
     </div>
 
     <div class="point">
       <span class="tag">Investor point</span>
       <div class="b">
-        강사가 세 시간을 뒤져도 찾기 어려운 프린트 출처 해부를 <b>몇 초 만에</b> 끝냅니다.
-        이 시간 차이가 학원의 인건비 구조를 바꿉니다.
+        '업로드 후 유사문제 생성'만으로는 기존 1위 사업자와 차별화되지 않습니다. <b>복수 출처 계보 복원과 기호 연산(SymPy) 기반 무오류 검산 파이프라인</b>이 핵심 기술 장벽입니다.
       </div>
     </div>
   </Slide>
 
-  {/* 06 ─────────────────────────────────────────────── */}
-  {/* 06 ── 분석 실증 ─────────────────────────────────── */}
-  <Slide id="s6" title="분석 실증">
-    <div class="kicker">05<span class="sep">/</span>분석 실증</div>
-    <h2 class="h2">출제자는 조건을 지우고 부호를 뒤집습니다.<br />그 연산을 복원합니다</h2>
+  {/* 07 ── 분석 실증 (실제 프로토타입 수치·캡처 정합화) ─────── */}
+  <Slide id="s7" title="분석 실증">
+    <div class="kicker">06<span class="sep">/</span>분석 실증</div>
+    <h2 class="h2">출제자는 조건을 지우고 부호를 뒤집습니다.<br />숨긴 변형 연산을 역추적합니다</h2>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-[1.02fr_0.98fr]" style="margin-top:16px">
       <div class="mock">
-        <div class="mock-h"><b>화성고 1학기 기출</b> 올림포스와 학평에 붙여 본 결과</div>
+        <div class="mock-h"><b>화성고 1학기 기출</b> 올림포스 원전 매칭 프로토타입</div>
         <div class="mock-b" style="padding:10px 14px">
-          <table class="tbl" style="margin:0">
+          <table class="tbl tbl-match" style="margin:0">
             <thead><tr><th>학교 기출</th><th>매칭된 출처</th></tr></thead>
             <tbody>
-              <tr><td>8번</td><td>올림포스 69쪽 18번</td></tr>
+              <tr><td>8번</td><td>올림포스 69쪽 18번 (+60쪽 서술형 01번)</td></tr>
               <tr><td>3번</td><td>올림포스 65쪽 03번</td></tr>
               <tr><td>19번</td><td>65쪽 02번 + 68쪽 13번</td></tr>
               <tr><td>1번</td><td>68쪽 15번 + 66쪽 06번</td></tr>
               <tr><td>15번</td><td>15쪽 09번 + 62쪽 03·04번</td></tr>
             </tbody>
           </table>
-          <div class="drop" style="margin-top:10px">
-            한 문항이 출처 두세 개의 결합인 경우가 다섯 건 중 세 건입니다. 단원만 맞춰서는 잡히지 않습니다.
+          <div class="drop" style="margin-top:8px">
+            샘플 5문항 중 3문항(19·1·15번)이 부교재 2~3문항 결합이고, 8번도 서술형 상수항 구조를 가져왔습니다.
           </div>
         </div>
       </div>
 
       <div class="mock">
         <div class="mock-h"><b>Δ 연산자 역추적</b> 화성고 8번</div>
-        <div class="mock-b">
+        <div class="mock-b" style="padding:11px 14px">
           <div class="flex flex-wrap gap-1.5">
-            <span class="qtag">원전 69쪽 18번</span>
-            <span class="qtag">Layer 0 → 4</span>
+            <span class="qtag">69쪽 18번 + 60쪽 서술형 01번</span>
+            <span class="qtag">Layer 0 → 6</span>
           </div>
 
-          <div class="mt-3 rounded-[6px] border border-line2 bg-fill px-2 pb-1">
-            <div class="font-mono text-[8.5px] uppercase tracking-[0.12em] text-fg3 pt-2">원전 69쪽 18번</div>
-            <Tex display tex="x^3-(a^2-5a-5)x^2+(a^2-6a-4)x+b=0" />
+          <div class="mt-2.5 rounded-[6px] border border-line2 bg-fill px-2 pb-1">
+            <div class="font-mono text-[8.5px] uppercase tracking-[0.12em] text-fg3 pt-1.5">원전 69쪽 18번</div>
+            <Tex display tex={String.raw`x^3-(a^2-5a-5)x^2+(a^2-6a-4)x+b=0`} />
             <div class="font-mono text-[8.5px] uppercase tracking-[0.12em] text-accent">변형 · 화성고 8번</div>
-            <Tex display tex="x^3-(a^2+a-1)x^2-a(a-3)x+4a=0" />
+            <Tex display tex={String.raw`x^3-(a^2+a-1)x^2-a(a-3)x+4a=0`} />
             <div class="text-center font-mono text-[10px] text-accent pb-1">
-              ⇒ <Tex tex="\alpha\gamma=-4" />
+              ⇒ <Tex tex={String.raw`\alpha\gamma=-4`} />
             </div>
           </div>
 
-          <div class="mt-3">
-            <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-accent mb-1.5">Step 1 · 조건 지우기</div>
-            <div class="text-[11.5px] leading-[1.7] text-fg2">
-              조건 (가)를 발문에서 지웠습니다. 대신 서술형 01번의 상황 벡터를 4a로 옮겨 x = −1을 직접 찾게 했습니다.
+          <div class="mt-2.5">
+            <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-accent mb-1">Step 1 · 조건 은닉과 상수항 결합</div>
+            <div class="text-[11.5px] leading-[1.65] text-fg2">
+              조건 (가)를 지우고 60쪽 서술형 01번처럼 상수항을 <Tex tex={String.raw`4a`} /> 로 바꿔 <Tex tex={String.raw`x=-1`} /> 고정근을 숨겼습니다.
             </div>
           </div>
 
-          <div class="mt-3">
-            <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-accent mb-1.5">Step 2 · 발문 치환</div>
-            <div class="text-[11.5px] leading-[1.7] text-fg2">
-              조건 (나)를 근과 계수 관계 <b style="color:var(--fg)"><Tex tex="\alpha\gamma=-4" /></b>로 바꿨습니다. 근의 곱 조건이 두 갈래로 갈라지면서 가지치기가 뒤로 밀립니다.
+          <div class="mt-2.5">
+            <div class="font-mono text-[9px] uppercase tracking-[0.1em] text-accent mb-1">Step 2 · 발문 치환</div>
+            <div class="text-[11.5px] leading-[1.65] text-fg2">
+              조건 (나)를 근과 계수 관계 <b style="color:var(--fg)"><Tex tex={String.raw`\alpha\gamma=-4`} /></b> 로 바꿔 고정근 위치 분기를 뒤로 밀었습니다.
             </div>
           </div>
 
-          <div class="mt-3 flex flex-wrap gap-1.5">
+          <div class="mt-2.5 flex flex-wrap gap-1.5">
             <span class="qtag">has_delayed_pruning true</span>
-            <span class="qtag">Δ 부호 반전</span>
-            <span class="qtag">상황 벡터 4a</span>
+            <span class="qtag">HIDE · COMBINE · TRAP</span>
+            <span class="qtag">상수항 4a 치환</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="rows" style="margin-top:12px">
-      <div class="row">
+    <div class="rows" style="margin-top:10px">
+      <div class="row" style="padding:10px 0">
         <div class="k">무엇이 남는가</div>
-        <div class="v">분석 결과는 JSONL로 남습니다. Layer 0에 원문 구조, Layer 4에 변형 연산자가 붙습니다. 다음 학기 같은 학교에 그대로 적용됩니다</div>
+        <div class="v">올림포스 336문항·기출 117문항을 Layer 0~6 JSONL로 구조화했고, 초기 백테스트(20문항) 중 <b>16문항(80%)이 동일 계열</b>로 포착됐습니다</div>
       </div>
-      <div class="row">
+      <div class="row" style="padding:10px 0">
         <div class="k">왜 중요한가</div>
-        <div class="v">원전을 모르면 변형을 만들 수 없습니다. 출처와 연산자가 잡히면 <b>같은 연산으로 새 문항을 조립</b>합니다</div>
+        <div class="v">원전 계보를 모르면 고난도 변형을 만들 수 없습니다. 추출한 7개 변형 축으로 학교별 예상 세트를 조립합니다</div>
+      </div>
+    </div>
+
+    <div class="point" style="margin-top:14px">
+      <span class="tag">Investor point</span>
+      <div class="b">
+        프롬프트 기획안이 아니라 <b>실제 작동하는 인제스트·검산 파이프라인</b> 결과입니다. 표본 1개교 초기 실험이므로 다수 학교 시험지로 일반화 성능을 추가 검증합니다.
+      </div>
+    </div>
+  </Slide>
+
+  {/* 08 ── 모델 검증 · AI Decision Review (신규 · 우선순위 1·3) ─ */}
+  <Slide id="s8" title="모델 검증">
+    <div class="kicker">07<span class="sep">/</span>모델 검증</div>
+    <h2 class="h2">AI 초안의 학생 B2C 가정을 독립 근거로 검증하고,<br />학원이 결제하는 B2B2C 구독으로 수정했습니다</h2>
+
+    <div class="band b3" style="margin-top:16px">
+      <div class="cell">
+        <div class="ck">대안 A · 학생 B2C · 기각</div>
+        <div class="ch">시험 1회 15만 원</div>
+        <div class="cd">초기 AI 초안(TAM 3,980억 원). 학교당 원생 1~10명 조건과 '학교당 10명 결제'가 충돌하고 학생 지불 의향 근거가 없습니다</div>
+      </div>
+      <div class="cell engine">
+        <div class="ck">대안 B · 학원 B2B2C · 채택</div>
+        <div class="ch">학원 구독 + 북스토어</div>
+        <div class="cd">소수 원생 학교의 자료 제작 부담을 실제로 지는 학원이 결제하고, 학생은 학원 자료로 학습합니다</div>
+      </div>
+      <div class="cell out">
+        <div class="ck">대안 C · 출판사 번들 · 보류</div>
+        <div class="ch">핵심 파트너로 흡수</div>
+        <div class="cd">초기 협상력과 계약 조건이 미확인 상태라 단독 BM에서는 제외하고, 정품 부교재 유통 파트너로 편입했습니다</div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-[0.95fr_1.05fr]" style="margin-top:14px">
+      <div class="mock">
+        <div class="mock-h"><b>AI Decision Review</b> 4단계 검증</div>
+        <div class="mock-b" style="padding:10px 14px">
+          <div class="rows" style="margin:0">
+            <div class="row" style="padding:9px 0">
+              <div class="k">1 · AI 초안</div>
+              <div class="v">학생 직접 결제 B2C(시험당 15만 원, 재결제 60%)로 TAM 3,980억 원 제시</div>
+            </div>
+            <div class="row" style="padding:9px 0">
+              <div class="k">2 · 의문 제기</div>
+              <div class="v">사용자=결제자 단정, 손익분기 역산 가격, 기존 학원 SaaS 비교 누락 확인</div>
+            </div>
+            <div class="row" style="padding:9px 0">
+              <div class="k">3 · 독립 근거</div>
+              <div class="v">매쓰플랫·수학비서 공식 요금표 및 결산 보도, 화성고 프로토타입 교차 대조</div>
+            </div>
+            <div class="row" style="padding:9px 0">
+              <div class="k">4 · 최종 판단</div>
+              <div class="v"><b>Modify</b> · 유료 B2C 삭제, 학원 구독 채택 및 시장 정합 요금(월 27~30만 원)으로 하향 조정</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock">
+        <div class="mock-h"><b>독립 근거</b> 외부 실측 데이터와 가격 보정</div>
+        <div class="mock-b" style="padding:10px 14px">
+          <table class="tbl" style="margin:0">
+            <thead><tr><th>확인 지표</th><th>출처 · 기준</th><th class="num" style="text-align:right">검증 결과</th></tr></thead>
+            <tbody>
+              <tr><td><b>9,500곳 · 196억</b> 매쓰플랫 실적</td><td>언론 보도 2026.1</td><td class="num">기관 평균 연 206만</td></tr>
+              <tr><td><b>월 19.8~30만</b> 매쓰플랫 정가</td><td>공식 요금표(Basic·Prem.)</td><td class="num">실제 SaaS 가격대</td></tr>
+              <tr><td><b>88%</b> 학교별 기출 서비스 이용률</td><td>대학저널 2024.11</td><td class="num">학교별 자료 수요</td></tr>
+              <tr class="total"><td><b>월 60만 → 30만</b> 우리 ARPU 보정</td><td>기존 가설 3.5배 과다 해소</td><td class="num pos">시장 요금대 안착</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
     <div class="point">
       <span class="tag">Investor point</span>
       <div class="b">
-        강사가 세 시간 붙들고 있던 대조를 <b>초 단위</b>로 끝냅니다. 검색으로는 나오지 않는 층입니다.
-        단원과 유형을 맞추는 도구는 이미 있고, <b>출제자의 변형 연산자</b>를 복원하는 도구는 없습니다.
+        기존 초안(월 60만 원, 경쟁사 평균의 3.5배)의 과다 책정을 바로잡아, <b>매쓰플랫 정가 구간(월 19.8~30만 원) 안인 핵심 월 27만 원(통합 30만 원)</b>으로 맞췄습니다.
+        실제 추가 지불 의향은 원장 인터뷰로 검증합니다.
       </div>
     </div>
   </Slide>
 
-  <Slide id="s7" title="법적 해자">
-    <div class="kicker">06<span class="sep">/</span>법적 해자</div>
-    <h2 class="h2">정품 부교재 구매 기록과 프린트 소유 확인을 연동해,<br />저작권 위험을 출판사 매출로 바꿨습니다</h2>
+  {/* 09 ─────────────────────────────────────────────── */}
+  <Slide id="s9" title="북스토어 연동">
+    <div class="kicker">08<span class="sep">/</span>북스토어 연동</div>
+    <h2 class="h2">정품 부교재 구매 기록과 프린트 소유 확인을 연동해,<br />저작권 위험을 관리하고 출판사 판로를 넓힙니다</h2>
 
     <div class="band b3" style="margin-top:22px">
       <div class="cell">
         <div class="ck">학원</div>
         <div class="ch">북스토어에서 실물 구매</div>
-        <div class="cd">학원과 원생용 부교재를 자체 북스토어에서 구매합니다</div>
+        <div class="cd">학원과 원생용 부교재를 자체 북스토어에서 도서정가제 범위(10% 할인)로 구매합니다</div>
       </div>
       <div class="cell">
         <div class="ck">출판사</div>
-        <div class="ch">정품 판매와 데이터 파트너십</div>
-        <div class="cd">무단 스캔본이 아니라 정품 판매가 늘어납니다. 학교별 채택 데이터도 함께 갑니다</div>
+        <div class="ch">정품 판매와 구매기록 연동</div>
+        <div class="cd">무단 스캔본 유통 대신 정품 판매가 늘어나고 학교별 채택 흐름이 모입니다</div>
       </div>
       <div class="cell out">
         <div class="ck">플랫폼</div>
-        <div class="ch">인증 학원에만 해금</div>
-        <div class="cd">구매 기록이 확인된 학원에만 부교재 큐레이션 데이터를 엽니다</div>
+        <div class="ch">인증 학원에만 분석 열람</div>
+        <div class="cd">구매 기록과 소유 확인을 거친 학원에만 부교재·프린트 분석 결과를 엽니다</div>
       </div>
     </div>
 
     <div class="rows" style="margin-top:14px">
       <div class="row">
         <div class="k">구매 인증</div>
-        <div class="v">부교재 분석과 큐레이션은 <b>북스토어 구매 기록이 있는 학원에만</b> 열립니다. 이용권과 데이터가 함께 묶입니다</div>
+        <div class="v">부교재 분석과 큐레이션은 <b>북스토어 정품 구매 기록이 확인된 학원에만</b> 열립니다</div>
       </div>
       <div class="row">
         <div class="k">프린트 소유 확인</div>
-        <div class="v">학원이 현장에서 확보해 올린 프린트만 분석합니다. 출처 경로가 기록으로 남습니다</div>
+        <div class="v">학원이 현장에서 직접 확보해 올린 학교 유인물만 분석하며 업로드 이력을 남깁니다</div>
       </div>
       <div class="row">
         <div class="k">출판사 관계</div>
-        <div class="v">플랫폼이 커질수록 <b>정품 부교재 판매가 함께 늘어납니다</b>. 적대 관계가 아니라 판로가 됩니다</div>
+        <div class="v">플랫폼 이용이 늘수록 <b>정품 부교재 판매가 함께 늘어나는 구조</b>입니다. 라이선스·연동 조건은 출판사 문의로 검증합니다</div>
       </div>
     </div>
 
     <div class="point">
       <span class="tag">Investor point</span>
       <div class="b">
-        투자자가 가장 먼저 묻는 부교재와 프린트 저작권 문제를 방어하는 데서 멈추지 않습니다.
-        <b>북스토어 매출과 출판사 독점 파트너십</b>이라는 해자로 바꿔 놓았습니다.
+        출판사를 별도 과금 대상이 아니라 <b>정품 유통 파트너</b>로 두었습니다.
+        구매기록 연동과 소유 확인 절차를 결합해 저작권 리스크 관리 체계를 먼저 갖춥니다.
       </div>
     </div>
   </Slide>
 
-  {/* 07 ─────────────────────────────────────────────── */}
-  <Slide id="s8" title="수익 모델">
-    <div class="kicker">07<span class="sep">/</span>수익 모델</div>
-    <h2 class="h2">기본 구독료에 학교 수 확장, 분석 크레딧, 북스토어 마진이<br />더해져 학원당 매출이 입체적으로 커집니다</h2>
+  {/* 10 ── 수익 모델 (공식 경쟁사 요금표 벤치마크 반영) ─────── */}
+  <Slide id="s10" title="수익 모델">
+    <div class="kicker">09<span class="sep">/</span>수익 모델</div>
+    <h2 class="h2">기본 구독 월 15만 원으로 진입 장벽을 낮추고,<br />담당 학교 확장과 크레딧으로 월 27~30만 원을 만듭니다</h2>
 
-    <div class="grid grid-cols-1 gap-3 md:grid-cols-4" style="margin-top:18px">
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-4" style="margin-top:16px">
       <div class="cell">
-        <div class="ck">수익원 1</div>
-        <div class="ch">기본 구독료</div>
-        <div class="cd">학원당 월 구독. 기본 학교 수와 기본 크레딧이 포함됩니다. 반복 매출이 여기서 나옵니다</div>
+        <div class="ck">수익원 1 · 기본 (3개교)</div>
+        <div class="ch">기본 구독 15만 원</div>
+        <div class="cd">매쓰플랫 Basic(월 19.8만 원)보다 낮은 진입가입니다. 담당 3개교와 기본 크레딧을 포함합니다</div>
       </div>
       <div class="cell">
-        <div class="ck">수익원 2</div>
-        <div class="ch">학교 추가 과금</div>
-        <div class="cd">기본 포함 학교 수를 넘으면 학교당 월 요금. 원생 1~2명 학교도 추가 즉시 학원 이익입니다</div>
+        <div class="ck">수익원 2 · 확장 (+3개교)</div>
+        <div class="ch">학교 추가 9만 원</div>
+        <div class="cd">초과 학교당 월 3만 원(평균 6개교 대비 기준). 소수 학교 원생 1명만 지켜도 13배 회수합니다</div>
       </div>
       <div class="cell">
-        <div class="ck">수익원 3</div>
-        <div class="ch">분석 크레딧</div>
-        <div class="cd">시험 기간에 프린트 분석이 몰리면 기본 크레딧을 넘습니다. 초과분을 과금합니다</div>
+        <div class="ck">수익원 3 · 시험기</div>
+        <div class="ch">분석 크레딧 3만 원</div>
+        <div class="cd">중간·기말 직전 프린트 업로드 집중 구간의 초과 분석 과금액(연 36만 원의 월 환산)입니다</div>
       </div>
-      <div class="cell">
-        <div class="ck">수익원 4</div>
-        <div class="ch">북스토어 마진</div>
-        <div class="cd">학기 초 학원과 원생용 부교재를 실물로 판매합니다. 유통 마진이 붙습니다</div>
+      <div class="cell out">
+        <div class="ck">수익원 4 · 확장 가설</div>
+        <div class="ch">도서 순마진 3만 원</div>
+        <div class="cd">원생 35명·연 4권(연 196만 원) 거래에서 도서정가제 10% 할인·결제·물류비를 뺀 순기여 가설입니다</div>
       </div>
     </div>
 
-    <div class="rowhead"><span class="n">ARPU</span><h3>학원 한 곳의 월 매출 구성</h3><span class="meta">예시 가정 · 단위는 만 원</span></div>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-[1.1fr_0.9fr]" style="margin-top:6px">
+    <div class="rowhead"><span class="n">ARPU</span><h3>학원 한 곳의 매출 구성과 시장 요금 비교</h3><span class="meta">단위 만 원 · 세전 가설</span></div>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-[1.05fr_0.95fr]" style="margin-top:6px">
       <RevenueChart client:load />
       <table class="tbl" style="margin:0">
-        <thead><tr><th>항목</th><th class="num" style="text-align:right">월</th><th class="num" style="text-align:right">연</th></tr></thead>
+        <thead><tr><th>구분</th><th class="num" style="text-align:right">월</th><th class="num" style="text-align:right">연</th></tr></thead>
         <tbody>
-          <tr><td>기본 구독</td><td class="num">30</td><td class="num">360</td></tr>
-          <tr><td>학교 추가</td><td class="num">15</td><td class="num">180</td></tr>
-          <tr><td>분석 크레딧</td><td class="num">5</td><td class="num">60</td></tr>
-          <tr><td>도서 마진</td><td class="num">10</td><td class="num">120</td></tr>
-          <tr class="total"><td>합계</td><td class="num pos">60</td><td class="num pos">720</td></tr>
+          <tr><td><b>핵심 SaaS ARPU</b> (기본 15 + 학교 9 + 크레딧 3)</td><td class="num"><b>27</b></td><td class="num"><b>324</b></td></tr>
+          <tr><td>북스토어 도서 순마진 (총판 공급률·물류 차감 가설)</td><td class="num">3</td><td class="num">36</td></tr>
+          <tr class="total"><td>통합 기준 ARPU (6개교 담당 학원 기준)</td><td class="num pos">30</td><td class="num pos">360</td></tr>
+          <tr><td>비교 · 매쓰플랫 정가(Basic~Premium) / 실수취 평균</td><td class="num">19.8~30</td><td class="num">238~360 (평균 206)</td></tr>
         </tbody>
       </table>
     </div>
@@ -454,20 +592,20 @@ const TOTAL = 11;
     <div class="point">
       <span class="tag">Investor point</span>
       <div class="b">
-        월정액 하나에 갇힌 문제은행과 다릅니다. 학원이 담당 학교와 프린트를 늘릴수록 매출이 같이 커지는
-        <b>순매출유지율(NDR) 구조</b>입니다.
+        시작 요금(월 15만 원)은 낮추고 <b>담당 학교 수에 비례해 커지는 순매출유지율(NDR) 구조</b>로 설계했습니다.
+        통합 월 30만 원은 매쓰플랫 Premium(월 30만 원)과 같은 상단이며, 다학교 조교 인건비(월 50만 원 이상)보다 저렴합니다.
       </div>
     </div>
   </Slide>
 
-  {/* 08 ─────────────────────────────────────────────── */}
-  <Slide id="s9" title="GTM">
-    <div class="kicker">08<span class="sep">/</span>GTM</div>
+  {/* 11 ─────────────────────────────────────────────── */}
+  <Slide id="s11" title="GTM">
+    <div class="kicker">10<span class="sep">/</span>GTM</div>
     <h2 class="h2">고가 영업 사원 대신, 학원 강사들이 매일 고충을 터놓는<br />스레드와 인스타그램에서 직접 유입시킵니다</h2>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-[1fr_1fr]" style="margin-top:18px">
       <div class="mock">
-        <div class="mock-h"><b>스레드</b> 학원 강사 피드</div>
+        <div class="mock-h"><b>스레드</b> 학원 강사 피드 예시</div>
         <div class="mock-b">
           <div class="flex items-center gap-2.5">
             <span class="inline-block h-7 w-7 rounded-full" style="background:color-mix(in srgb, var(--fg2) 22%, transparent)"></span>
@@ -477,11 +615,11 @@ const TOTAL = 11;
             </div>
           </div>
           <div class="mt-3 text-[12px] leading-[1.75] text-fg2">
-            프린트 방금 올렸는데 1분 만에 출처 해부되고 변형문제 15개 뽑혔습니다. 이거 없으면 오늘 밤샘입니다.
+            학교 프린트 올렸더니 올림포스 몇 쪽 몇 번 결합인지 바로 잡히고 검산 끝난 예상 30문항까지 나왔습니다. 소수 학교 대비할 때 밤샘 줄어듭니다.
           </div>
           <div class="mt-3 flex gap-1.5">
-            <span class="qtag">출처 분석 완료</span>
-            <span class="qtag" style="color:var(--fg2);border-color:var(--line);background:var(--fill)">샘플 1건 무료</span>
+            <span class="qtag">출처 계보 리포트</span>
+            <span class="qtag" style="color:var(--fg2);border-color:var(--line);background:var(--fill)">무료 샘플 1건</span>
           </div>
         </div>
       </div>
@@ -489,15 +627,15 @@ const TOTAL = 11;
       <div class="rows" style="margin:0">
         <div class="row">
           <div class="k">1 · 채널</div>
-          <div class="v">로컬 학원 원장과 젊은 강사가 <b>매일 고충을 나누는 곳</b>이 스레드와 인스타그램입니다</div>
+          <div class="v">로컬 학원 원장과 강사가 <b>매일 자료 준비 고충을 나누는 공간</b>이 스레드와 인스타그램입니다</div>
         </div>
         <div class="row">
           <div class="k">2 · 훅</div>
-          <div class="v">"원생 2명 학교 프린트, 올리고 1분 만에 변형문제 15개"라는 결과 화면이 곧 광고입니다</div>
+          <div class="v">원생 1~2명 학교 프린트의 원전 결합과 변형 지점을 해부한 실제 리포트 화면이 곧 광고입니다</div>
         </div>
         <div class="row">
           <div class="k">3 · 전환</div>
-          <div class="v">무료 샘플 프린트 1건 분석을 체험하게 하고, 학기 구독과 북스토어 구매로 넘깁니다</div>
+          <div class="v">무료 샘플 프린트 1건 분석을 먼저 체험하게 한 뒤, 월 15만 원 기본 구독과 북스토어로 연결합니다</div>
         </div>
       </div>
     </div>
@@ -506,18 +644,18 @@ const TOTAL = 11;
       <span class="tag">Investor point</span>
       <div class="b">
         학원 대상 B2B 영업의 고질적인 문제는 높은 고객획득비용과 긴 영업 주기입니다.
-        강사 커뮤니티에서 결과물로 유입시키는 <b>제품 주도 성장</b>으로 이 두 가지를 함께 줄입니다.
+        강사 커뮤니티에서 무료 샘플 결과물로 유입시키는 <b>제품 주도 성장</b>으로 비용과 영업 주기를 함께 줄입니다.
       </div>
     </div>
   </Slide>
 
-  {/* 09 ─────────────────────────────────────────────── */}
-  <Slide id="s10" title="비용 구조">
-    <div class="kicker">09<span class="sep">/</span>비용 구조</div>
-    <h2 class="h2">분석 1건당 한계 비용은 낮게 유지되고,<br />가입 학원 수가 늘수록 이익률이 가파르게 올라갑니다</h2>
+  {/* 12 ── 비용 구조 (API 추론 원가·BEP 50곳 정밀 반영) ────── */}
+  <Slide id="s12" title="비용 구조">
+    <div class="kicker">11<span class="sep">/</span>비용 구조</div>
+    <h2 class="h2">프린트 1건 분석 변동비는 1,000원 미만이며,<br />유료 학원 50곳에서 손익분기를 넘어 이익률이 올라갑니다</h2>
 
     <div class="mock" style="margin-top:14px">
-      <div class="mock-h"><b>공헌이익률</b> 가입 학원 수에 따른 변화</div>
+      <div class="mock-h"><b>영업이익률 시뮬레이션</b> 유료 학원 수(50·120·250·500곳)별 고정비 희석 예시 (가설)</div>
       <div class="mock-b" style="padding:8px 12px">
         <LeverageChart client:load />
       </div>
@@ -525,69 +663,68 @@ const TOTAL = 11;
 
     <div class="cols" style="margin-top:14px">
       <div class="c">
-        <div class="ck">변동비</div>
-        <div class="ch">분석 1건당 토큰과 연산</div>
-        <div class="cd">건당 단가가 낮고, 건수가 늘어도 비례해 커지지 않습니다</div>
+        <div class="ck">변동비 · 공헌이익률 86%</div>
+        <div class="ch">학원당 월 약 4.2만 원</div>
+        <div class="cd">프린트 1회분(20문항) 추론 API 원가는 1,000원 미만입니다. 월 15건 분석·PG 수수료·인프라를 합쳐도 변동비가 낮습니다</div>
       </div>
       <div class="c">
-        <div class="ck">고정비</div>
-        <div class="ch">개발 인건비와 물류</div>
-        <div class="cd">모델 유지와 개발, 북스토어 재고와 물류 인프라에 집중됩니다</div>
+        <div class="ck">고정비 · 4인 초기 팀</div>
+        <div class="ch">초기 연 1.4억 → SOM 4.0억</div>
+        <div class="cd">부교재 1종(336문항)은 1회 구조화하면 전국 학원이 재사용합니다. 인건비와 기본 인프라가 고정비 중심입니다</div>
       </div>
       <div class="c">
-        <div class="ck">레버리지</div>
-        <div class="ch">임계점 이후 이익률 상승</div>
-        <div class="cd">가입 학원이 늘면 <b>고정비 비중이 급격히 줄어듭니다</b>. 소프트웨어 마진에 가까워집니다</div>
+        <div class="ck">손익분기 · 영업 레버리지</div>
+        <div class="ch">50곳 BEP → 250곳 42%</div>
+        <div class="cd"><b>유료 학원 약 46곳</b>에서 초기 고정비를 회수하고, 기준 SOM 250곳(연 9.0억 원)에서 영업이익률 42%에 도달합니다</div>
       </div>
     </div>
 
     <div class="point">
       <span class="tag">Investor point</span>
       <div class="b">
-        도서 유통업도, 인력 파견형 에듀테크도 아닙니다. 규모가 커질수록 <b>소프트웨어 마진</b>에 수렴하는
-        비용 구조입니다.
+        공통 부교재 JSONL은 한 번 구축해 반복 재사용하고, 학교 프린트만 증분 추론합니다. 규모가 커질수록 <b>소프트웨어 마진 구조(공헌이익률 약 86%)</b>가 그대로 영업이익으로 전환됩니다.
       </div>
     </div>
   </Slide>
 
-  {/* 10 ─────────────────────────────────────────────── */}
-  <Slide id="s11" title="해자 · Ask">
-    <div class="kicker">10<span class="sep">/</span>해자 · Ask</div>
-    <h2 class="h2">출판사 정품 유통망과 현장의 프린트 데이터가 결합된<br />내신 적중 큐레이션 생태계를 선점합니다</h2>
+  {/* 13 ── 해자 · 로드맵 · Ask (전체 숫자 완전 정렬) ───────── */}
+  <Slide id="s13" title="해자 · Ask">
+    <div class="kicker">12<span class="sep">/</span>해자 · Ask</div>
+    <h2 class="h2">학교별 출처 계보 데이터와 정품 부교재 연동을 결합해,<br />초기 50곳 손익분기부터 기준 SOM 250곳까지 확장합니다</h2>
 
-    <div class="cols" style="margin-top:20px">
+    <div class="cols" style="margin-top:18px">
       <div class="c">
         <div class="ck">해자 1 · 데이터</div>
-        <div class="ch">학교별 프린트 출처 매칭</div>
-        <div class="cd">학원이 매 학기 직접 올리는 프린트와 기출 출처가 축적됩니다. 학교 단위로만 쌓이는 데이터입니다.</div>
+        <div class="ch">학교별 출처·연산자 축적</div>
+        <div class="cd">학원이 매 학기 올리는 프린트의 복수 출처와 7개 변형 축 데이터가 학교 단위로 쌓여 다음 학기에 재사용됩니다</div>
       </div>
       <div class="c">
         <div class="ck">해자 2 · 유통</div>
-        <div class="ch">합법적 부교재 분석권</div>
-        <div class="cd">출판사 파트너십과 자체 북스토어가 묶여 있습니다. 후발주자가 같은 조건을 단기간에 만들기 어렵습니다.</div>
+        <div class="ch">정품 부교재 연동 구조</div>
+        <div class="cd">북스토어 구매 기록과 분석 열람을 묶어 출판사와 이해관계가 일치하는 유통 구조를 만듭니다</div>
       </div>
       <div class="c">
         <div class="ck">해자 3 · 관계</div>
-        <div class="ch">학기 단위 락인</div>
-        <div class="cd">학원의 학사 일정에 붙어 있습니다. 학기 중간에 갈아타면 그 학기 자료를 잃습니다.</div>
+        <div class="ch">학기 단위 리텐션</div>
+        <div class="cd">학원의 학사 일정에 맞물려 돌아갑니다. 학기 중간에 이탈하면 축적한 학교별 분석 자산을 쓰기 어렵습니다</div>
       </div>
     </div>
 
-    <div class="rowhead"><span class="n">ROADMAP</span><h3>3단계 확장</h3><span class="meta">Phase 1 → 3</span></div>
+    <div class="rowhead"><span class="n">ROADMAP</span><h3>SOM 연동 3단계 목표</h3><span class="meta">50곳 BEP → 120곳 → 250곳 SOM</span></div>
     <table class="tbl">
-      <thead><tr><th>단계</th><th>목표</th><th class="num" style="text-align:right">지표</th></tr></thead>
+      <thead><tr><th>단계</th><th>핵심 검증 · 실행 과제</th><th class="num" style="text-align:right">유료 학원 · 연 매출</th></tr></thead>
       <tbody>
-        <tr><td>Phase 1</td><td>스레드와 인스타 유입으로 로컬 학원 확보, 주요 부교재 북스토어 연동 검증</td><td class="num">300곳</td></tr>
-        <tr><td>Phase 2</td><td>다학교 프린트 출처 분석 모델 고도화, 출판사 공식 파트너십 확대</td><td class="num">학교 3,000곳</td></tr>
-        <tr><td>Phase 3</td><td>전국 중소 학원 필수 구독 인프라 안착, 과목 확장</td><td class="num">과목 3개</td></tr>
+        <tr><td>Phase 1 · 초기 검증</td><td>원장·강사 ODI 설문 및 5명 WTP 인터뷰, 무료 샘플 전환, 출판사 1~2곳 문의로 BEP 돌파</td><td class="num">50곳 · 1.8억</td></tr>
+        <tr><td>Phase 2 · 시장 확장</td><td>수도권·광역시 다학교 학원 확산(일반고 1,594개교 중 주요 부교재 채택교 DB 구축)</td><td class="num">120곳 · 4.3억</td></tr>
+        <tr class="total"><td>Phase 3 · 기준 SOM</td><td>SAM 2,530곳 중 10% 안착 · 영어·국어 과목 확장 시 공격적 목표 500곳(18.0억)</td><td class="num pos">250곳 · 9.0억</td></tr>
       </tbody>
     </table>
 
     <div class="point">
       <span class="tag">The Ask</span>
       <div class="b">
-        <b>시드 라운드 <span class="ph">금액</span></b>. 사용처는 모델 고도화 인건비와 북스토어 초기 물류입니다.
-        12개월 안에 <b>학원 300곳</b>과 <b>북스토어 연동 부교재 <span class="ph">N종</span></b>을 확인합니다.
+        <b>시드 라운드 <span class="ph">금액</span></b>. 사용처는 출처 계보 모델 고도화, 주요 부교재 사전 구조화, 북스토어 초기 연동입니다.
+        12개월 안에 <b>손익분기 유료 학원 50곳(연 1.8억 원)</b>과 <b>핵심 부교재 <span class="ph">N종</span> 연동</b>을 증명합니다.
       </div>
     </div>
 

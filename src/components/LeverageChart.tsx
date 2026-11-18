@@ -2,23 +2,25 @@ import { LineChart, ThemeProvider } from 'ztd-charts';
 import { useDeckTheme } from './useDeckTheme';
 
 const ROWS = [
-  { academies: 100, margin: 18 },
-  { academies: 300, margin: 34 },
-  { academies: 600, margin: 48 },
-  { academies: 900, margin: 58 },
+  { academies: 50, margin: 8 },
+  { academies: 120, margin: 30 },
+  { academies: 250, margin: 42 },
+  { academies: 500, margin: 52 },
 ];
 
 export default function LeverageChart() {
   const theme = useDeckTheme();
   return (
     <ThemeProvider theme={theme} locale="ko-KR">
-      <div className="ztd">
+      <div className="ztd" style={{ paddingRight: 12 }}>
         <LineChart
           data={ROWS}
           x="academies"
           y="margin"
-          height={210}
+          height={195}
           format="percent"
+          dots
+          area
           showLabels
           locale="ko-KR"
         />

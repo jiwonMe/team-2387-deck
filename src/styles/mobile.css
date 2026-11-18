@@ -57,7 +57,7 @@
   .tbl th { padding: 10px 6px; }
   .tbl td::before { display: none; }
   .tbl td.num { text-align: right; }
-  #s6 .tbl th:first-child { width: 22%; }
+  .tbl-match th:first-child, #s7 .tbl th:first-child { width: 22%; }
   .overview { padding: 32px 22px; }
   .toc button { min-height: 48px; }
 }

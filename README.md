@@ -30,7 +30,7 @@ web/
 │   ├── components/
 │   │   ├── Slide.astro     # <section class="slide"> 래퍼
 │   │   └── DeckDemo.tsx    # 5화면 데모 (React 아일랜드, 유일한 클라이언트 JS)
-│   └── pages/index.astro   # 11장 슬라이드 본문
+│   └── pages/index.astro   # 13장 슬라이드 본문
 └── dist/                   # 빌드 결과 (git 제외)
 ```
 
@@ -77,7 +77,7 @@ Git 연동 시 Vercel 프로젝트의 **Root Directory 를 `web`** 으로 지정
 
 - 분석/트래픽 수집 — 발표용이라 불필요
 - i18n — 한국어 단일
-- 콘텐츠 컬렉션 — 슬라이드가 11장이라 마크다운화 이득 없음
+- 콘텐츠 컬렉션 — 슬라이드가 13장이라 마크다운화 이득 없음
 
 > `presentation/index.html` 은 이 프레임워크 이전에 만든 단일 파일 버전입니다. 내용이 같으므로 지워도 됩니다.
 
